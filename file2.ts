@@ -40,11 +40,19 @@ nums.forEach(function (n) {
   });
 
   // The parameter's type annotation is an object type
-function printCoord(pt: { x; y: number }) {
+function printCoord(pt: { x, y: number }) {
     
     console.log("The coordinate's x value is " + pt.x);
     console.log("The coordinate's y value is " + pt.y);
   }
   printCoord({ x: 3, y: 7 });
+
+
+  function printName(obj: { first: string; last?: string }) {
+    // ...
+  }
+  // Both OK
+  printName({ first: "Bob" }); //last is optional property
+  printName({ first: "Alice", last: "Alisson" });
 
 
