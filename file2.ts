@@ -14,7 +14,7 @@ function greet(name: string) {
   }
 
   const names = ["Alice", "Bob", "Eve"];
-  const nums = [1, 2, 3, 4, 5, 6, 7]
+  const nums =  [1, 'hhh', 'lflf', 3, 4,{}, 5, 6, 7]
  
 // Contextual typing for function - parameter s inferred to have type string
 names.forEach(function (s) {
@@ -26,3 +26,25 @@ names.forEach((s) => {
   console.log(s.toUpperCase());
   s + 2
 });
+
+// Contextual typing for function - parameter s inferred to have type string
+nums.forEach(function (n) {
+    console.log(n);
+    n= 'ggg'
+  });
+   
+  // Contextual typing also applies to arrow functions
+  nums.forEach((n) => {
+    console.log(n);
+    n =+ 2
+  });
+
+  // The parameter's type annotation is an object type
+function printCoord(pt: { x; y: number }) {
+    
+    console.log("The coordinate's x value is " + pt.x);
+    console.log("The coordinate's y value is " + pt.y);
+  }
+  printCoord({ x: 3, y: 7 });
+
+
