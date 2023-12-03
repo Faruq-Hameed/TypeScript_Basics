@@ -66,7 +66,7 @@ function printCoord(pt: { x, y: number }) {
       }
      
       // A safe alternative using modern JavaScript syntax:
-      console.log(obj.last?.toUpperCase());
+      console.log(obj.first?.toUpperCase());
     }
 
 
@@ -79,18 +79,28 @@ function printCoord(pt: { x, y: number }) {
       printId(101);
       // OK
       printId("202");
-      // Error
+      // Errors
       printId({ myID: 22342 });
       printId([1, 2, 3, 4, 5, 6, 7, 8])
 
 
+    //Narrowing
       function printId2(id: number | string) {
-        //Narrowing
         if (typeof id === "string") {
           // In this branch, id is of type 'string'
           console.log(id.toUpperCase());
         } else {
           // Here, id is of type 'number'
           console.log(id);
+        }
+      }
+
+      function welcomePeople(x: string[] | string) {
+        if (Array.isArray(x)) {
+          // Here: 'x' is 'string[]'
+          console.log("Hello, " + x.join(" and "));
+        } else {
+          // Here: 'x' is 'string'
+          console.log("Welcome lone traveler " + x);
         }
       }
