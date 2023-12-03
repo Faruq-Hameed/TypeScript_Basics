@@ -54,5 +54,29 @@ function printCoord(pt: { x, y: number }) {
   // Both OK
   printName({ first: "Bob" }); //last is optional property
   printName({ first: "Alice", last: "Alisson" });
+//   printName({ first: "Alice", last: "Alisson", third: 7 });  //third wasn't optional property so an error will be thrown
+
+  function printName2(obj: { first: string; last?: string }) {
+      // Error - might crash if 'obj.last' wasn't provided!
+    //   console.log(obj.last.toUpperCase());
+    // 'obj.last' is possibly 'undefined'.
+      if (obj.last !== undefined) {
+        // OK
+        console.log(obj.last.toUpperCase());
+      }
+     
+      // A safe alternative using modern JavaScript syntax:
+      console.log(obj.last?.toUpperCase());
+    }
 
 
+//UNION TYPES
+    function printId(id: number | string) {
+        console.log("Your ID is: " + id);
+      }
+      // OK
+      printId(101);
+      // OK
+      printId("202");
+      // Error
+      printId({ myID: 22342 });
