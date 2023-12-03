@@ -71,12 +71,26 @@ function printCoord(pt: { x, y: number }) {
 
 
 //UNION TYPES
-    function printId(id: number | string) {
+    function printId(id: string | number | boolean ) {
         console.log("Your ID is: " + id);
+        // id.toUpperCase(); //TypeScript will only allow an operation if it is valid for every member of the union
       }
-      // OK
+      // OK 
       printId(101);
       // OK
       printId("202");
       // Error
       printId({ myID: 22342 });
+      printId([1, 2, 3, 4, 5, 6, 7, 8])
+
+
+      function printId2(id: number | string) {
+        //Narrowing
+        if (typeof id === "string") {
+          // In this branch, id is of type 'string'
+          console.log(id.toUpperCase());
+        } else {
+          // Here, id is of type 'number'
+          console.log(id);
+        }
+      }

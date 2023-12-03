@@ -99,10 +99,12 @@ function printName2(obj) {
 //UNION TYPES
 function printId(id) {
     console.log("Your ID is: " + id);
+    id.toUpperCase();
 }
-// OK
+// OK 
 printId(101);
 // OK
 printId("202");
 // Error
 printId({ myID: 22342 });
+printId([1, 2, 3, 4, 5, 6, 7, 8]);
