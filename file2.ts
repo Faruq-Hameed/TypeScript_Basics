@@ -104,3 +104,67 @@ function printCoord(pt: { x, y: number }) {
           console.log("Welcome lone traveler " + x);
         }
       }
+
+type strg = number;
+
+
+interface Point {
+        x: number;
+        y: number;
+        z?: strg
+}
+       
+function printCoord2(pt: Point) {
+        console.log("The coordinate's x value is " + pt.x);
+        console.log("The coordinate's y value is " + pt.y);
+}
+       
+printCoord({ x: 100, y: 100});
+var texts: strg = 9
+type strg = number
+const obj_2 : Point = { x: 100, y: 100, z: 10 };
+
+var employee : { 
+    id: number; 
+    name: string; 
+}; 
+
+employee = { 
+  id: 100, 
+  name : "John"
+}
+
+var Fruit :string;
+
+Fruit = 'apple'
+
+
+interface text {
+    title: string;
+  }
+  
+  interface text {
+    num?: number;
+    title: string;
+  }
+var objc : text = {
+    title: 'title',
+    // num: 8,
+}
+objc.num
+
+type text_2 = string | undefined
+
+type text_2 = number
+
+interface Window {
+    title: string;
+  }
+  
+  interface Window {
+    ts: TypeScriptAPI;
+  }
+  
+  const src = 'const a = "Hello World"'
+
+  window.ts.transpileModule(src, {});

@@ -105,11 +105,11 @@ function printId(id) {
 printId(101);
 // OK
 printId("202");
-// Error
+// Errors
 printId({ myID: 22342 });
 printId([1, 2, 3, 4, 5, 6, 7, 8]);
+//Narrowing
 function printId2(id) {
-    //Narrowing
     if (typeof id === "string") {
         // In this branch, id is of type 'string'
         console.log(id.toUpperCase());
@@ -119,3 +119,20 @@ function printId2(id) {
         console.log(id);
     }
 }
+function welcomePeople(x) {
+    if (Array.isArray(x)) {
+        // Here: 'x' is 'string[]'
+        console.log("Hello, " + x.join(" and "));
+    }
+    else {
+        // Here: 'x' is 'string'
+        console.log("Welcome lone traveler " + x);
+    }
+}
+function printCoord2(pt) {
+    console.log("The coordinate's x value is " + pt.x);
+    console.log("The coordinate's y value is " + pt.y);
+}
+printCoord({ x: 100, y: 100 });
+var texts = 9;
+var obj_2 = { x: 100, y: 100, z: 10 };
