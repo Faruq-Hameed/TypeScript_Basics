@@ -17,10 +17,13 @@ const faruq: People = {
     age:8
 }
 
+type id = number
+
 interface People {
-    id?: number
+    id?: id
 }
 
+type id
 // console.log(faruq.id)
 
 const greetingFunc = (obj: People): number => {
@@ -32,5 +35,6 @@ const greetingFunc = (obj: People): number => {
 // const result1 = greetingFunc({ title: 'Mr', age: 30 }) 
 console.log(greetingFunc({ title: 'Mr', age: 30 }) )
 console.log(greetingFunc({ title: 'Mr', age: 30, id: 7 }) )
+
 
 // const result2 =  greetingFunc({ title: 'Mrs', age: 30, id: 7 })
