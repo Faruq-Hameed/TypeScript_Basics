@@ -1,8 +1,7 @@
 import { Router, Request, Response } from "express";
-import {Task} from '../models/tasks';
+import {Task, tasks} from '../models/tasks';
 import StatusCodes from 'http-status-codes'
 const router = Router();
-const tasks: Task[] = [];
 
 //Creating a new Task
 router.post('/', (req: Request, res: Response) => {
@@ -52,5 +51,20 @@ router.put('/:id', (req: Request, res: Response) => {
     }
     res.status(StatusCodes.NOT_FOUND).send({ message: 'Task not found', task });
 })
+
+//Delete a task
+
+router.delete('/:', (req: Request, res: Response) => {
+    if (!req.params.id) {
+        return res.status(StatusCodes.BAD_REQUEST).send({ message: 'Task Id required'});
+    }
+    const taskIndex = tasks.findIndex(task => task.id === parseInt(req.params.id));
+    if(taskIndex >= 0) {
+        tasks.splice(taskIndex, 1);
+        return res.status(StatusCodes.OK).send({ message:'Task deleted successfully'});
+    }
+    res.status(StatusCodes.NOT_FOUND).send({ message: 'Task not found'});
+
+});
 
 export default router;
