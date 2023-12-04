@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create Tasks</h1>
+    <form action="http://localhost:3000/tasks" method="post">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+        <br>
+        <br>
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description">
+        <br>
+        <br>
+        <span>Completed</span>
+        <br>
+        <label for="true">True</label>
+        <input type="radio" name="completed" id="true" value="true">
+        <label for="false">False</label>
+        <input type="radio" name="completed" id="false" value="false">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+     <hr>
+     <br>
+     <h1> Update Task</h1>
+    <form action="http://localhost:3000/tasks/:id" method="PUT">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+        <br>
+        <br>
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description">
+        <br>
+        <br>
+        <span>Completed</span>
+        <br>
+        <label for="true">True</label>
+        <input type="radio" name="completed" id="true" value="true">
+        <label for="false">False</label>
+        <input type="radio" name="completed" id="false" value="false">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

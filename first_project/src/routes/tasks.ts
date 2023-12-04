@@ -30,7 +30,7 @@ router.get('/:id', (req: Request, res: Response) => {
     const task = tasks.find(task => task.id === parseInt(req.params.id));
     if (task) {
         res.status(StatusCodes.OK).send({ message:' Task found', task });
-
+        return
     }
     res.status(StatusCodes.NOT_FOUND).send({ message: 'Task not found', task });
 }
@@ -54,7 +54,8 @@ router.put('/:id', (req: Request, res: Response) => {
 
 //Delete a task
 
-router.delete('/:', (req: Request, res: Response) => {
+router.delete('/:id', (req: Request, res: Response) => {
+   
     if (!req.params.id) {
         return res.status(StatusCodes.BAD_REQUEST).send({ message: 'Task Id required'});
     }
