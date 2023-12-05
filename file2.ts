@@ -14,7 +14,10 @@ function greet(name: string) {
   }
 
   const names = ["Alice", "Bob", "Eve"];
-  const nums =  [1, 'hhh', 'lflf', 3, 4,{}, 5, 6, 7]
+  const nums: num[] =  [1, 3, 4, 5, 6, 7]
+
+  type num = number;
+
  
 // Contextual typing for function - parameter s inferred to have type string
 names.forEach(function (s) {
@@ -31,6 +34,8 @@ names.forEach((s) => {
 nums.forEach(function (n) {
     console.log(n);
     n= 'ggg'
+    nums.push(n);
+    console.log({nums})
   });
    
   // Contextual typing also applies to arrow functions
@@ -40,7 +45,7 @@ nums.forEach(function (n) {
   });
 
   // The parameter's type annotation is an object type
-function printCoord(pt: { x, y: number }) {
+function printCoord(pt: { x: any, y: number }) {
     
     console.log("The coordinate's x value is " + pt.x);
     console.log("The coordinate's y value is " + pt.y);
@@ -53,12 +58,12 @@ function printCoord(pt: { x, y: number }) {
   }
   // Both OK
   printName({ first: "Bob" }); //last is optional property
-  printName({ first: "Alice", last: "Alisson" });
+  printName({ first: "Alice", last: "" });
 //   printName({ first: "Alice", last: "Alisson", third: 7 });  //third wasn't optional property so an error will be thrown
 
   function printName2(obj: { first: string; last?: string }) {
       // Error - might crash if 'obj.last' wasn't provided!
-    //   console.log(obj.last.toUpperCase());
+      // console.log(obj.last.toUpperCase());
     // 'obj.last' is possibly 'undefined'.
       if (obj.last !== undefined) {
         // OK
