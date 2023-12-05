@@ -74,7 +74,7 @@ declare function handleRequest(url: string, method: "GET" | "POST"): void;
 const req = { url: "https://example.com", method: "GET" };
 handleRequest(req.url, req.method);
 // Argument of type 'string' is not assignable to parameter of type '"GET" | "POST"'.
-You can change the inference by adding a type assertion in either location:
+// You can change the inference by adding a type assertion in either location:
 
 // Change 1:
 const req = { url: "https://example.com", method: "GET" as "GET" };
