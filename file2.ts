@@ -71,6 +71,8 @@ function printCoord(pt: { x: any, y: number }) {
       }
      
       // A safe alternative using modern JavaScript syntax:
+      // let safeObj = obj.first?.toUpperCase()
+      if (obj.first?.toUpperCase())
       console.log(obj.first?.toUpperCase());
     }
 
