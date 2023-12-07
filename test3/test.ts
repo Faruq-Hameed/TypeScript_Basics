@@ -10,3 +10,11 @@
     return "hello.".repeat(padding) + input;
   }
   console.log(padLeft(5, 'hello world'))
+
+//narrowing to check implicitly
+  function padLeft(padding: number | string, input: string) {
+    if (typeof padding === "number") {
+      return " ".repeat(padding) + input;
+    }
+    return padding + input;
+  }
