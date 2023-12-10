@@ -45,3 +45,18 @@ sayHi = (x: number) => {
 }
 sayHi(9, 10)
 // let sayHi : (name: string) => console.log(`name is ${name}`)
+
+type StringOrNumber = string | number
+
+let strNum : StringOrNumber = 'string'
+
+interface Student {
+    name : string,
+    class: string
+};
+
+const aseda : Student = {
+name : 'aseda',
+class: 'pg'
+}
+aseda.name = 'akin'
