@@ -1,17 +1,25 @@
 const sym = Symbol('hello');
 
 let imp= null;
-console.log(imp);
-console.log(typeof imp);
 
-imp
-console.log(typeof imp);
-imp = null;
-console.log(typeof imp);
+let literalTypes: "GET" | "POST" | "PUT" | "DELETE" = 'POST';
+console.log(typeof literalTypes);
 
-// imp.age = 1;
+interface Person  {
+    name: string,
+    age: number
+}
 
-console.log(imp);
-imp = 'hello';
-console.log(imp);
-console.log(typeof imp);
+const faruq: Person = {
+    name: 'faruq',
+    age: 36
+}
+interface Person{
+    class?: string
+}
+faruq.class = 'PG'
+
+
+// literalTypes = 'DELETE'
+
+// console.log(typeof literalTypes);
