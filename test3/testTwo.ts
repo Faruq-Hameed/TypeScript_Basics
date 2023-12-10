@@ -19,7 +19,10 @@ interface Person{
 }
 faruq.class = 'PG'
 
-const ids : (number | string)[] = []
+const ids : (number | any)[] = []
 
 
 ids.push(8)
+ids.push('123', {}, null, undefined)
+
+console.log(ids)
