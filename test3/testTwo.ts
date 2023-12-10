@@ -3,7 +3,7 @@ const sym = Symbol('hello');
 let imp= null;
 
 let literalTypes: "GET" | "POST" | "PUT" | "DELETE" = 'POST';
-console.log(typeof literalTypes);
+// console.log(typeof literalTypes);
 
 interface Person  {
     name: string,
@@ -25,4 +25,9 @@ const ids : (number | any)[] = []
 ids.push(8)
 ids.push('123', {}, null, undefined)
 
-console.log(ids)
+let check = [9, 'hello', {age: 8}]
+// console.log(check)
+
+let obj = check[2]
+obj = true
+console.log(obj);
