@@ -37,3 +37,6 @@ const func = (x: number, y: number) : string => {
     let result = `${(x + y)}`
     return result
 }
+
+// function signature
+let sayHi : (x: number, y: number) =>{}
