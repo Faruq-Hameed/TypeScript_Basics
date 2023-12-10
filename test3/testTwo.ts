@@ -39,4 +39,9 @@ const func = (x: number, y: number) : string => {
 }
 
 // function signature
-let sayHi : (x: number, y: number) =>{}
+let sayHi : (x: number, y: number) => void
+sayHi = (x: number) => {
+    console.log(`x is ${x}}`)
+}
+sayHi(9, 10)
+// let sayHi : (name: string) => console.log(`name is ${name}`)
