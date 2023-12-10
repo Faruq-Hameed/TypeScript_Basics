@@ -19,7 +19,7 @@ interface Person{
 }
 faruq.class = 'PG'
 
+const ids : (number | string)[] = []
 
-// literalTypes = 'DELETE'
 
-// console.log(typeof literalTypes);
+ids.push(8)
