@@ -28,6 +28,12 @@ ids.push('123', {}, null, undefined)
 let check = [9, 'hello', {age: 8}]
 // console.log(check)
 
-let obj = check[2]
-obj = true
-console.log(obj);
+//turples
+let arry: [number, number, number] | [string, string]
+
+arry = ['1', '2']
+
+const func = (x: number, y: number) : string => {
+    let result = `${(x + y)}`
+    return result
+}
