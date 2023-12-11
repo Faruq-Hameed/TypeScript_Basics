@@ -52,11 +52,12 @@ let strNum : StringOrNumber = 'string'
 
 interface Student {
     name : string,
-    class: string
+    class: boolean
 };
 
-const aseda : Student = {
+let aseda : Student = {
 name : 'aseda',
-class: 'pg'
+class: true
 }
-aseda.name = 'akin'
+aseda.name = 'akin';
+
