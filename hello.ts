@@ -1,6 +1,6 @@
 var greeting: string = "Hello world !"
 type obj = object
-console.log(greeting)
+// console.log(greeting)
 
 const person : obj = {
     name: "John",
@@ -12,10 +12,10 @@ interface People  {
     age: number
 }
 
-const faruq: People = {
-    title: 'Mr',
-    age:8
-}
+// const faruq: People = {
+//     title: 'Mr',
+//     age:8
+// }
 
 type id = number
 
@@ -32,8 +32,8 @@ const greetingFunc = (obj: People): number => {
 }
 
 // const result1 = greetingFunc({ title: 'Mr', age: 30 }) 
-console.log(greetingFunc({ title: 'Mr', age: 30 }) )
-console.log(greetingFunc({ title: 'Mr', age: 30, id: 7 }) )
+// console.log(greetingFunc({ title: 'Mr', age: 30 }) )
+// console.log(greetingFunc({ title: 'Mr', age: 30, id: 7 }) )
 
 
 // const result2 =  greetingFunc({ title: 'Mrs', age: 30, id: 7 })
@@ -52,7 +52,7 @@ function echoMammal(m: Mammal) {
 
 // e.g. The error below will always use the name Mammal 
 // to refer to the type which is expected:
-echoMammal({ name: 12343 })
+// echoMammal({ name: 12343 })
 
 // The type of `m` here is the exact same as mammal,
 // but as it's not been directly named, TypeScript
@@ -62,4 +62,49 @@ function echoAnimal(m: { name: string }) {
     console.log(m.name)
 }
 
-echoAnimal({ name: 12345 })
+// echoAnimal({ name: 12345 })
+
+interface Human {
+    userName: string,
+    isRich: boolean
+}
+
+const ajb : Human = {
+    userName: 'faruq',
+    isRich: true
+}
+
+const acb  = {
+    userName: 'faruq',
+    // isRich: true
+}
+const checkTwo = (a: Human) =>{
+    if ('age' in a) console.log(a.userName)
+}
+// // in operator narrowing
+// type Fish = { swim: 'void' };
+// type Bird = { fly: 'voids' };
+ 
+// function move(animal: Fish | Bird) {
+//   if ("fly" in animal) {
+//     return console.log('jjj', animal.fly);
+//   }
+ 
+// console.log({animal});
+// }
+
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+type Human3 = { swim?: () => void, fly?: () => void };
+ 
+function move(animal: Fish | Bird | Human3) {
+  if ("swim" in animal) {
+    return animal;
+      
+// (parameter) animal: Fish | Human
+  } else {
+    animal;
+      
+// (parameter) animal: Bird | Human
+  }
+}
