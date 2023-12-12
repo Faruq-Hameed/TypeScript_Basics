@@ -108,3 +108,18 @@ function move(animal: Fish | Bird | Human3) {
 // (parameter) animal: Bird | Human
   }
 }
+
+let xy = Math.random() < 0.5 ? 10 : "hello world!";
+   
+// let xy: string | number
+xy = 1;
+ 
+console.log(xy);
+           
+// let xy: number
+xy = "goodbye!";
+ 
+console.log(xy);
+           
+// let xy: string
+// xy= {}
