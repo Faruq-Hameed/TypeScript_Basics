@@ -17,22 +17,6 @@ const passedFunc = () =>{
 }
 // printToConsole((7));
 
-//function types in TS
-function greeter(fn: (a: string) => void) {
-    fn("Hello, World");
-  }
-   
-  function printToConsole(s: string) {
-    console.log(s);
-  }
-   
-//   greeter(printToConsole);
-
-const passedFunc = () =>{
-    console.log('hello world');
-
-}
-// printToConsole((7));
 
 //   greeter( ()=>{
 //     console.log('hello world');
