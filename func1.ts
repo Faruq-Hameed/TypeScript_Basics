@@ -17,6 +17,7 @@ const passedFunc = () =>{
 }
 // printToConsole((7));
 
+
 //   greeter( ()=>{
 //     console.log('hello world');
 //         return "agg"
