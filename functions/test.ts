@@ -1,5 +1,7 @@
 // Function Type Expressions
 
+import { log } from "console";
+
 function greeter(fn: (a: string) => void): void {
     fn("Hello, World");
   }
@@ -16,7 +18,7 @@ type GreetFunction = (a: string) => void;
 function greeters(fn: GreetFunction): void {
  console.log("fn('hello') : ", fn('hello'));
 }
-greeters(printToConsole)
+// greeters(printToConsole)
 
 
   type DescribableFunction = {
@@ -35,8 +37,8 @@ greeters(printToConsole)
   myFunc.description = "default description";
   myFunc.age = 9
    
-  doSomething(myFunc);
-  console.log({myFunc});
+//   doSomething(myFunc);
+//   console.log({myFunc});
 
 
 type Func = {
@@ -49,3 +51,42 @@ function secondFunc( fn: Func){
 }
 
 // secondFunc({age: 1, male: true})
+
+
+// You can also write a construct signature by adding the new keyword in front of a call signature
+
+type SomeConstructor = {
+    new (s: string): number;
+  };
+
+  function fn(ctor: SomeConstructor) {
+    return new ctor("hello");
+  }
+
+  interface CallOrConstruct {
+    (n?: number): string;
+    new (s: string): Date;
+  }
+
+//   Generic Functions
+function firstElement(arr: any[]) {
+    return arr[0];
+  }
+
+  //type parameter
+function firstElementTwo<Type>(arr: Type[]): Type | undefined{
+    return arr[0];
+}
+  
+const s = firstElementTwo(['a', 'b', 'c'])
+
+const n = firstElementTwo([,2,3,4,5])!
+
+console.log('typeof n :', typeof n, 'typeof s :',typeof s);
+
+
+function testTypeParameter<str>(a: str): str{
+    return a;
+}
+const num : number= testTypeParameter(8)
+// console.log(typeof testTypeParameter(6));
