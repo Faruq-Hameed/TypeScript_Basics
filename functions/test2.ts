@@ -79,3 +79,24 @@ function greet<Str extends string>(s: Str): Str {
   }
 //   Rule: If a type parameter only appears in one location, strongly reconsider if you actually need it
 
+
+// Optional Parameters
+
+function f(n: number) {
+    console.log(n.toFixed()); // 0 arguments
+    console.log(n.toFixed(3)); // 1 argument
+  }
+
+  function f2(x?: number) {
+    // ...
+  }
+  f2(); // OK
+  f2(10); // OK
+
+  //default parameter can be added so any undefined argument will be the default value of the parameter
+
+  function f3(x=3){
+    // ...
+  }
+  
+  declare function f4(x?: number): number; //
