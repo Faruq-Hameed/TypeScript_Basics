@@ -50,3 +50,32 @@ function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
 
 const arr = combine<number | string>([1, 2, 3], ["hello"]);
 
+// Here’s another pair of similar functions:
+
+function filter1<Type>(arr: Type[], func: (arg: Type) => boolean): Type[] {
+  return arr.filter(func);
+}
+// Rule: When possible, use the type parameter itself rather than constraining it
+ 
+function filter2<Type, Func extends (arg: Type) => boolean>(
+  arr: Type[],
+  func: Func
+): Type[] {
+  return arr.filter(func);
+}
+// Rule: Always use as few type parameters as possible
+
+function greet<Str extends string>(s: Str): Str {
+    console.log("Hello, " + s);
+    return s;
+  }
+   
+  greet("world");
+
+
+  function greet2(s: string) {
+    console.log("Hello, " + s);
+    return s;
+  }
+//   Rule: If a type parameter only appears in one location, strongly reconsider if you actually need it
+
