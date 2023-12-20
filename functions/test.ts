@@ -85,8 +85,10 @@ const n = firstElementTwo([,2,3,4,5])!
 console.log('typeof n :', typeof n, 'typeof s :',typeof s);
 
 
-function testTypeParameter<str>(a: str): str{
+function testTypeParameter<str>(a: str): string | undefined {
+    if(typeof a === 'string')
     return a;
 }
-const num : number= testTypeParameter(8)
+const num = testTypeParameter(8)
 // console.log(typeof testTypeParameter(6));
+
