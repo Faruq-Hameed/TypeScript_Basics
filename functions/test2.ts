@@ -39,3 +39,14 @@ const longerString = longArry('alice', 'bob') // longerString is of type 'alice'
 
 // We allowed TypeScript to infer the return type of longest as inferred above
 
+function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
+    return arr1.concat(arr2);
+  }
+
+//   Type 'string' is not assignable to type 'number'. because it expecting two arrays with similar elements
+//   const arr = combine([1, 2, 3], ["hello"]);
+
+// If you intended to do the above, however, you could manually specify Type:
+
+const arr = combine<number | string>([1, 2, 3], ["hello"]);
+
