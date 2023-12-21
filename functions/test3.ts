@@ -28,7 +28,7 @@ console.log(funcSignature('9'))
 function fn(x: boolean): void;
 // Argument type isn't right
 function fn(x: string ): void;
-function fn(x: number): boolean;
+// function fn(x: number): boolean; //thrown error
 // This overload signature is not compatible with its implementation signature.
 function fn(x: string | boolean){ 
     
@@ -48,13 +48,13 @@ function len(x: any) {
 
 len(""); // OK
 len([0]); // OK
-len(Math.random() > 0.5 ? "hello" : [0]); //throw error
-
+// len(Math.random() > 0.5 ? "hello" : [0]); //throw error
+// 
 // Because both overloads have the same argument count and same return type, 
 // we can instead write a non-overloaded version of the function:
 
 // function len(x: any[] | string) {
 //   return x.length;
 // }
-// Rule:Always prefer parameters with union types instead of overloads when possible
+// Rule:Always prefer parameters with union types instead of overloads when possible like the above is better than the former
 
