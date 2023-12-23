@@ -151,4 +151,30 @@ console.log({angle});
 //destructuring explained
 let a: number, b: string, c: boolean;
 
-[a, b, c] = [9, 'hello', (6 > 7) ? true: 'true']
+[a, b, c] = [9, 'hello', true]
+
+let a2: number, b2: string, c2: number[]
+
+[a2, b2, ...c2] = [a, b, 2,6,6,7]
+
+console.log({c2});
+
+// Parameter Destructuring
+
+// You can use parameter destructuring to conveniently unpack objects provided as an argument 
+// into one or more local variables in the function body
+
+function sum ({a, b, c}: {a: number, b: number, c: number}): void{
+    console.log( a + b + c);
+}
+// The above can look a bit verbose, but you can use a named type here as well:
+
+// Same as prior example
+type ABC = {a: number, b: number, c: number}
+
+function sumTwo ({a, b, c} : ABC ): void{
+    console.log( a + b + c);
+
+}
+
+// Assignability of Functions
