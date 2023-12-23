@@ -1,3 +1,5 @@
+import { log } from "console";
+
 //function Overloads
 function makeDate(timestamp: number): Date;
 function makeDate(m: number, d: number, y: number): Date;
@@ -58,3 +60,95 @@ len([0]); // OK
 // }
 // Rule:Always prefer parameters with union types instead of overloads when possible like the above is better than the former
 
+interface getUser {
+    fiteredUser<User>(user: User): User[];
+}
+
+// function getUser(user) {
+
+// }
+
+
+// Other Types in TS
+
+// Void "void represents the return value of functions which don’t return a value
+// The inferred return type is void
+function noop() {
+    return;
+  }
+//   void is not the same as undefined in TS.
+
+
+// // object: The special type object refers to any value that isn’t 
+// a primitive (string, number, bigint, boolean, symbol, null, or undefined).
+// This is different from the empty object type { }, and also different from the global type Object
+
+// unknown: The unknown type represents any value
+
+function anyFunc(a: any): unknown{
+ a.b()
+ return undefined;
+}
+
+// function unknownFunc(a: unknown){
+//     a.b() //thrown error
+// }
+
+function safeParse(s: any): unknown {
+    return JSON.parse(s);
+  }
+   
+// never: The never type represents values which are never observed. In a return type, 
+// this means that the function throws an exception or terminates execution of the program
+
+function fail(msg: string): never {
+    throw new Error(msg);
+  }
+
+
+
+//   Rest Parameters and Arguments
+// A rest parameter appears after all other parameters, and uses the ... syntax:
+// Rest parameter defines functions that take an unbounded number of arguments.
+
+function restFunc (n: number, ...m: number[]): number[]{
+    return m.map((x) => n * x);
+
+}
+
+const rst = restFunc(10, 1, 2, 3, 4) // [10, 20, 30, 40] // after the first argument, the second argument can be nothing
+
+
+console.log({rst});
+
+// Rest Arguments
+// we can provide a variable number of arguments 
+// from an iterable object (for example, an array) using the spread syntax. 
+// For example, the push method of arrays takes any number of arguments:
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+arr1.push(...arr2);
+
+console.log({arr1});
+
+// Note that in general, TypeScript does not assume that arrays are immutable. 
+// This can lead to some surprising behavior:
+
+// Inferred type is number[] -- "an array with zero or more numbers",
+// not specifically two numbers
+const args = [8, 5];
+// const angle = Math.atan2(...args); //throw error
+// A spread argument must either have a tuple type or be passed to a rest parameter above.
+
+// The best fix for the situation above depends a bit on your code, 
+// but in general a const context is the most straightforward solution:
+const argsTwo = [8,5] as const;
+const angle = Math.atan2(...argsTwo); //
+
+console.log({angle});
+
+//destructuring explained
+let a: number, b: string, c: boolean;
+
+[a, b, c] = [9, 'hello', (6 > 7) ? true: 'true']
