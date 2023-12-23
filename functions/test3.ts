@@ -178,3 +178,34 @@ function sumTwo ({a, b, c} : ABC ): void{
 }
 
 // Assignability of Functions
+// Return type void
+// contextually, function type with a void return type (type voidFunc = () => void), 
+// when implemented, can return any other value, but it will be ignored.
+
+type voidFunc = () => void;
+ 
+const f1: voidFunc = () => {
+  return true;
+};
+ 
+const f2: voidFunc = () => true;
+ 
+const f3: voidFunc = function () {
+  return true;
+};
+// And when the return value of one of these functions is assigned to another variable, 
+// it will retain the type of void:
+const v1 = f1();
+console.log({v1});
+function f22(): void {
+    // @ts-expect-error
+    return true;
+  }
+
+  const v2 = f22();
+  console.log(v2);
+   
+  const f34 = function (): void {
+    // @ts-expect-error
+    return true;
+  };
