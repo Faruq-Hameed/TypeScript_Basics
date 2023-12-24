@@ -9,6 +9,22 @@ function greeter(fn: (a: string) => void) {
     console.log(s);
   }
    
+//function types in TS
+function greeter(fn: (a: string) => void) {
+    fn("Hello, World");
+  }
+   
+  function printToConsole(s: string) {
+    console.log(s);
+  }
+   
+//   greeter(printToConsole);
+
+const passedFunc = () =>{
+    console.log('hello world');
+
+}
+
 
 //   greeter(printToConsole);
 
