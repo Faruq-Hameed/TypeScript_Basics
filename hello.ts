@@ -7,6 +7,26 @@ const person : obj = {
     age: 34
 }
 
+  function printToConsole(s: string) {
+    console.log(s);
+  }
+   
+//   greeter(printToConsole);
+
+const passedFunc = () =>{
+    console.log('hello world');
+
+}
+
+
+//   greeter(printToConsole);
+
+const passedFunc = () =>{
+    console.log('hello world');
+
+}
+// printToConsole((7));
+
 interface People  {
     title: string,
     age: number
