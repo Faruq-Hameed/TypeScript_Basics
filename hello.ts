@@ -7,6 +7,7 @@ const person : obj = {
     age: 34
 }
 
+
 interface People  {
     title: string,
     age: number
