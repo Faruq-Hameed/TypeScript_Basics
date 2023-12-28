@@ -96,6 +96,8 @@ interface Container {
 function multiplyValue(container: Container, factor: number) {
   // Remove both 'null' and 'undefined' from the type.
   if (container.value != null) {
+    // if(container.value!){
+      // const result = container.value
     console.log(container.value);
                            
 // (property) Container.value: number

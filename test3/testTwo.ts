@@ -31,7 +31,7 @@ let check = [9, 'hello', {age: 8}]
 //turples
 let arry: [number, number, number] | [string, string]
 
-arry = ['1', '2']
+arry = ['1', '2'] //using strings
 
 const func = (x: number, y: number) : string => {
     let result = `${(x + y)}`
@@ -61,3 +61,17 @@ class: true
 }
 aseda.name = 'akin';
 
+interface asd  {
+    name : string,
+    class: boolean
+}
+
+let objct :asd ={
+    name : 'string',
+    class: !!'boolean',
+}
+
+interface asd {
+    age : number
+}
+objct.age =0
