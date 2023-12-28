@@ -12,7 +12,7 @@
 // //    const x = "hello" as unknown as number;
 
    
-// let changingString = "Hello World";
+let changingString = "Hello World";
 // changingString = "Olá Mundo";
 // // Because `changingString` can represent any possible string, that
 // // is how TypeScript describes it in the type system
@@ -23,23 +23,23 @@
 // // Because `constantString` can only represent 1 possible string, it
 // // has a literal type representation
 
-// // const constantString: "Hello World" //TypeScript system
+const constantString: "Hello World" = "Hello World" //TypeScript system
 
-// let x: "hello" = "hell";
+let x: "hello" = "hello";
 // // OK
 // x = "hello";
-// // ...
-// x = "howdy";
+// ...
+x = "hello";
 // // Type '"howdy"' is not assignable to type '"hello"'.
 
 // let nameTwo: 'string' = 'string' 
 // nameTwo= 'string'
 
 
-// function printText(s: string, alignment: "left" | "right" | "center") {
-//     // ...
-//   }
-//   printText("Hello, world", "left");
+function printText(s: string, alignment: "left" | "right" | "center") {
+    // ...
+  }
+  printText("Hello, world", "left");
 //   printText("G'day, mate", "centre");
 // //   Argument of type '"centre"' is not assignable to parameter of type '"left" | "right" | "center"'.
 
@@ -50,19 +50,19 @@
 // }
 
 
-// interface Options {
-//     width: number;
-//   }
-//   function configure(x: Options | "auto") {
-//     // ...
-//   }
-//   configure({ width: 100 });
+interface Options {
+    width: number;
+  }
+  function configure(x: Options | "auto") {
+    // ...
+  }
+  configure({ width: 100 });
 //   configure("auto");
 //   configure("automatic");
 // //   Argument of type '"automatic"' is not assignable to parameter of type 'Options | "auto"'.
 
-// let count: 'one' = 'one';
-// const objTwo = { counter: count, options: 1 };
+let count: 'one' = 'one';
+const objTwo = { counter: count, options: 1 };
 // if ('someCondition') {
 //     objTwo.counter = 1;
 //     objTwo.options = 'auto';
@@ -80,7 +80,13 @@
 // const req = { url: "https://example.com", method: "GET" as "GET" };
 // // Change 2
 // handleRequest(req.url, req.method as "GET");
-
+// //change 3 not tested anyway but should work.
+// function returnMethod(req: {method: string}){
+//   if(req.method === "GET"){
+//    return "GET";
+//   }
+//  return "POST"
+//  }
 
 // function liveDangerously(x?: number | null) {
 //   // No error
