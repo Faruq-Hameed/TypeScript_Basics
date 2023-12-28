@@ -13,10 +13,10 @@ interface People  {
     age: number
 }
 
-// const faruq: People = {
-//     title: 'Mr',
-//     age:8
-// }
+const faruq: People = {
+    title: 'Mr',
+    age:8
+}
 
 type id = number
 
@@ -24,7 +24,7 @@ interface People {
     id?: id
 }
 
-// console.log(faruq.id)
+console.log(faruq.id)
 
 const greetingFunc = (obj: People): number => {
     console.log('welcome: ' + obj.title);
@@ -32,9 +32,9 @@ const greetingFunc = (obj: People): number => {
     else return obj.age
 }
 
-// const result1 = greetingFunc({ title: 'Mr', age: 30 }) 
+const result1 = greetingFunc({ title: 'Mr', age: 30 }) 
 // console.log(greetingFunc({ title: 'Mr', age: 30 }) )
-// console.log(greetingFunc({ title: 'Mr', age: 30, id: 7 }) )
+console.log(greetingFunc({ title: 'Mr', age: 30, id: 7 }) )
 
 
 // const result2 =  greetingFunc({ title: 'Mrs', age: 30, id: 7 })
@@ -87,7 +87,7 @@ const checkTwo = (a: Human) =>{
 // type Bird = { fly: 'voids' };
  
 // function move(animal: Fish | Bird) {
-//   if ("fly" in animal) {
+//   if ("fly" in animal!) {
 //     return console.log('jjj', animal.fly);
 //   }
  
