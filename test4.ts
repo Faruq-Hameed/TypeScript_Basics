@@ -1,8 +1,8 @@
-function padLeft(padding: number | string, input: string) {
+function padLeft(padding: number | string, input: string): (string| number | void) {
     if (typeof padding === "number") {
       return input.repeat(padding) + input;
     }
-    return padding + input;
+    // return padding + input;
   }
 
   console.log(padLeft('7', '9'))
