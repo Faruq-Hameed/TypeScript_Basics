@@ -54,9 +54,8 @@ secondFunc({name: "faruq", ({age: 1, male: true}{
 })})
 
 type objF = { age: number, male: boolean}
-function objFunc(obj: objF): {
+function objFunc(obj: objF): string;
 
-}
 
 // You can also write a construct signature by adding the new keyword in front of a call signature
 
