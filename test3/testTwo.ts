@@ -71,7 +71,7 @@ let objct :asd ={
     class: !!'boolean',
 }
 
-interface asd {
-    age : number
-}
+// interface asd {
+//     age : number
+// }
 objct.age =0

@@ -1,7 +1,5 @@
 // Function Type Expressions
 
-import { log } from "console";
-
 function greeter(fn: (a: string) => void): void {
     fn("Hello, World");
   }
@@ -15,6 +13,7 @@ function greeter(fn: (a: string) => void): void {
   
 //   Of course, we can use a type alias to name a function type:
 type GreetFunction = (a: string) => void;
+
 function greeters(fn: GreetFunction): void {
  console.log("fn('hello') : ", fn('hello'));
 }
@@ -50,8 +49,14 @@ function secondFunc( fn: Func){
     console.log(`secondFunc called with ${fn.name} and ${fn({ age: 9, male:true})}`);
 }
 
-// secondFunc({age: 1, male: true})
+secondFunc({name: "faruq", ({age: 1, male: true}{
 
+})})
+
+type objF = { age: number, male: boolean}
+function objFunc(obj: objF): {
+
+}
 
 // You can also write a construct signature by adding the new keyword in front of a call signature
 
