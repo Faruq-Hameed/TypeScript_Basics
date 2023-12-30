@@ -95,6 +95,11 @@ function optionalPropertyFour({shape, xPos = 0, yPos = 0}: OptionalProperty){ //
 // Likewise xPos: number creates a variable named number whose value is based on the parameter’s xPos.
 //variable named number is redeclare twice according to the interpretation above.
 
+//type annotation can be added destructured parameters like below:
+function optionalPropertyFive({shape, xPos, yPos}: {shape: string, xPos: number, yPos: number}){
+    // render(shape);
+
+}
 
 // readonly Properties
 // readonly can’t be written to during type-checking.
@@ -128,7 +133,7 @@ function updatingResident(home: homeResident){
     home.resident.name = `resident ${home.resident.name}`
 
     return console.log({home});
-//  // But we can't write to the 'resident' property itself on a 'Home'.  
+//  // But we can't write to the 'resident' property itself on a 'Home' i.e home.resident = something.  
 //     home.resident = { //Cannot assign to 'resident' because it is a read-only property.
 //         name: 'resident',
 //         age: 9
@@ -155,3 +160,37 @@ prop.address.person = { name: person.name, age: person.age + 1}
 prop.address.street.name = person.name + ' ibadan' //this is immutable
 
 }
+
+
+// TypeScript doesn’t factor in whether properties on two types are readonly 
+// when checking whether those types are compatible, 
+// so readonly properties can also change via aliasing.
+//see below for example
+interface Person {
+    name: string;
+    age: number;
+  }
+   
+  interface ReadonlyPerson {
+    readonly name: string;
+    readonly age: number;
+  }
+   
+  let writablePerson: Person = {
+    name: "Person McPersonface",
+    age: 42,
+  };
+   
+  // works
+  let readonlyPerson: ReadonlyPerson = writablePerson;
+   
+  console.log(readonlyPerson.age); // prints '42'
+  writablePerson.age++;
+  console.log(readonlyPerson.age); // prints '43'
+
+  let writablePersonTwo: ReadonlyPerson = {
+    name: "Person McPersonface",
+    age: 42,
+  };
+  let readonlyPersonTwo: Person = writablePersonTwo
+console.log(readonlyPersonTwo.age++); // prints '
