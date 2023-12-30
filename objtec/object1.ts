@@ -73,3 +73,63 @@ function optionalPropertyThree(obj: OptionalProperty){
     x.toString()
      console.log(obj.yPos)
  }
+
+//  Note that this pattern of setting defaults for unspecified values is so common 
+//  that JavaScript has syntax to support it.
+
+function optionalPropertyFour({shape, xPos = 0, yPos = 0}: OptionalProperty){ //setting defaults for optional properties
+    xPos.toString() //
+    console.log(xPos)// type of x is a number not number | undefined
+}
+
+// Note that there is currently no way to place type annotations within destructuring patterns. 
+// This is because the following syntax already means something different in JavaScript.
+
+// function optionalPropertyFive({shape: Shape, xPos: number, yPos: number}){
+//     // render(shape);
+
+// }
+
+// In an object destructuring pattern, shape: Shape means 
+// “grab the property shape and redefine it locally as a variable named Shape. 
+// Likewise xPos: number creates a variable named number whose value is based on the parameter’s xPos.
+//variable named number is redeclare twice according to the interpretation above.
+
+
+// readonly Properties
+// readonly can’t be written to during type-checking.
+
+interface readonlyProp{
+    readonly prop: string;
+    age: number;
+}
+
+function readonlyFunction( obj: readonlyProp) {
+    let person = obj;
+    person.age = obj.age + 2;
+    console.log(person.prop); // we can read but cannot  write
+
+    person.prop = obj.prop + 'hello'; //Cannot assign to 'prop' because it is a read-only property
+  
+}
+
+
+// Using the readonly modifier doesn’t necessarily imply that a value is totally immutable. 
+// It just means the property itself can’t be re-written to.
+
+interface homeResident{
+    readonly resident: {name: string, age: number}
+}
+
+function updatingResident(home: homeResident){
+    // We can read and update properties from 'home.resident'.
+    console.log(`reading the resident ${home.resident.name}`) 
+    console.log(`reading the resident ${home.resident.age}`) 
+    home.resident.name = `resident ${home.resident.name}`
+
+ // But we can't write to the 'resident' property itself on a 'Home'.  
+    home.resident = { //Cannot assign to 'resident' because it is a read-only property.
+        name: 'resident',
+        age: 9
+    }
+}
