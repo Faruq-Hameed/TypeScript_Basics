@@ -1,5 +1,3 @@
-import { log } from "console";
-
 //function Overloads
 function makeDate(timestamp: number): Date;
 function makeDate(m: number, d: number, y: number): Date;
@@ -11,7 +9,7 @@ function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
   }
 }
 // These first two signatures above are called the overload signatures while the third is the signature implementation.
-// but this implementation signature can’t be called directly. 
+// but this implementation signature can’t be called directly (e.g makeDate(arg...)) . 
 // Even though we wrote a function with two optional parameters after the required one, 
 // it can’t be called with two parameters!
 
@@ -30,21 +28,20 @@ console.log(funcSignature('9'))
 function fn(x: boolean): void;
 // Argument type isn't right
 function fn(x: string ): void;
-// function fn(x: number): boolean; //thrown error
+// function fn(x: number): void; //thrown error
 // This overload signature is not compatible with its implementation signature.
-function fn(x: string | boolean){ 
-    
+function fn(x: string | boolean): boolean{ 
+    return true; //e; 
 }
 
 //Writing Good Overloads
 
 function len(s: string): number;
-function len(arr: any[]): number;
+function len(arr: number[]): number;
 function len(x: any) {
   return x.length;
 }
-
-// This function is fine; we can invoke it with strings or arrays. 
+// This above function is fine; we can invoke it with strings or arrays. 
 // // However, we can’t invoke it with a value that might be a string or an array, 
 // because TypeScript can only resolve a function call to a single overload:
 
@@ -144,6 +141,7 @@ const args = [8, 5];
 // The best fix for the situation above depends a bit on your code, 
 // but in general a const context is the most straightforward solution:
 const argsTwo = [8,5] as const;
+// argsTwo.push() //error; Property 'push' does not exist on type 'readonly ; this is immutable
 const angle = Math.atan2(...argsTwo); //
 
 console.log({angle});

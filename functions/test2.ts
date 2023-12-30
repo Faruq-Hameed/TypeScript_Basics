@@ -23,8 +23,8 @@ const longerArray = longArr({school: 'pg', age: [0,1,2,8,78], length: -6}, {age:
 console.log({longerArray});
 
 
-function longArry<Type>(a: Type, b: Type): string {
-   return `${a} and ${b}`;
+function longArry<Type>(a: Type, b: Type) {
+   return a;
 }
 
 const longerString = longArry({pga: '', length: 6}, {pga: '', age: 8, length: 6},) // longerString is of type 'alice' | 'bob'
@@ -38,9 +38,13 @@ function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
   }
 
 //   Type 'string' is not assignable to type 'number'. because it expecting two arrays with similar elements
-//   const arr = combine([1, 2, 3], ["hello"]);
+  // const arr = combine([1, 2, 3], ["hello"]);
 
 // If you intended to do the above, however, you could manually specify Type:
+const arryOne = [1, 2];
+const arryTwo = ['hello', 'world'];
+
+// var result = arryOne.concat(arryTwo); //error
 
 const arr = combine<number | string>([1, 2, 3], ["hello"]);
 
