@@ -18,22 +18,16 @@ function longArr<Value, Type extends { length: Value, age: Value}>(a: Type, b: T
     };
 }
 
-const longerArray = longArr({age: [0,1,2,8,78], length: -6}, {age: [0,1,2,8,78], length: -6.0});
+const longerArray = longArr({school: 'pg', age: [0,1,2,8,78], length: -6}, {age: [0,1,2,8,78], length: -6.0});
    
-// console.log({longerArray});
+console.log({longerArray});
 
-// const badArray = longArr(8, 9) //error
 
-function longArry<Value, Type extends { length: number}>(a: Type, b: Type) {
-    if (a.length >= b.length) {
-        return a;
-    }
-    else {
-        return b
-    };
+function longArry<Type>(a: Type, b: Type): string {
+   return `${a} and ${b}`;
 }
 
-const longerString = longArry('alice', 'bob') // longerString is of type 'alice' | 'bob'
+const longerString = longArry({pga: '', length: 6}, {pga: '', age: 8, length: 6},) // longerString is of type 'alice' | 'bob'
 
 // const notOk = longArr(10, 20) //error
 
