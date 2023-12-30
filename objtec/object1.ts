@@ -63,7 +63,7 @@ optionalProperty({shape:'square'})
 
 function optionalPropertyTwo(obj: OptionalProperty){
    let x = obj.xPos;
-   x.toString()
+//    x.toString() //error
     console.log(obj.yPos)
 }
 
@@ -109,7 +109,7 @@ function readonlyFunction( obj: readonlyProp) {
     person.age = obj.age + 2;
     console.log(person.prop); // we can read but cannot  write
 
-    person.prop = obj.prop + 'hello'; //Cannot assign to 'prop' because it is a read-only property
+    // person.prop = obj.prop + 'hello'; //Cannot assign to 'prop' because it is a read-only property
   
 }
 
@@ -127,9 +127,31 @@ function updatingResident(home: homeResident){
     console.log(`reading the resident ${home.resident.age}`) 
     home.resident.name = `resident ${home.resident.name}`
 
- // But we can't write to the 'resident' property itself on a 'Home'.  
-    home.resident = { //Cannot assign to 'resident' because it is a read-only property.
-        name: 'resident',
-        age: 9
+    return console.log({home});
+//  // But we can't write to the 'resident' property itself on a 'Home'.  
+//     home.resident = { //Cannot assign to 'resident' because it is a read-only property.
+//         name: 'resident',
+//         age: 9
+//     }
+}
+
+let objRes: homeResident = {
+    resident: {name: 'faruq', age: 9}
+}
+updatingResident(objRes)
+
+interface ResidentTwo {
+    readonly address: {
+        readonly street: { name: string, age: number},
+          person: { name: string, age:number}
     }
+}
+
+function updateResidentTwo (prop: ResidentTwo){
+// prop.address = 'ibadan'// error
+const {street, person} = prop.address
+prop.address.person = { name: person.name, age: person.age + 1}
+// prop.address.street = { name: person.name + ' ibadan', age: person.age + 1} //not mutable
+prop.address.street.name = person.name + ' ibadan' //this is immutable
+
 }
