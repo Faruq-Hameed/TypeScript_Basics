@@ -67,3 +67,9 @@ objTrials.name = {}
 console.log('objTrials.ahr ": ', objTrials.ahhh) //loosed type. I was expecting error
 
 console.log()
+
+const test : {[key: string] : string} = {}
+
+console.log('test.age = ', test.age)
+
+// Use the Record Utility Type
