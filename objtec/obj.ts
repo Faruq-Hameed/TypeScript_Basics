@@ -33,4 +33,37 @@ const objThree = {
     variable: "faruq"
 }
 
-console.log({objThree})
+console.log({objThree}) // { variable: 'faruq' }
+
+const objFour = {
+    [variable]: "faruq"
+}
+console.log({objFour}) // { name: 'faruq' }
+
+// The TypeScript concept  practiced above is called an object index signature.
+
+// Instead of using a type alias, you can also inline the type:
+const objTrial : {[key: string] : string} = {}
+
+objTrial.name = "faruq"
+
+objTrial['age'] = 'five'
+
+console.log({objTrial})
+
+const objTrials : {[key: string] : object} = {}
+
+interface readOnly  {
+    readonly name: string,
+}
+
+const readonlyObjTrial : readOnly = {
+    name: 'readonly'
+}
+console.log()
+objTrials.unread = {readonlyObjTrial}
+// readonlyObjTrial.name = 'hhhh' //error
+objTrials.name = {}
+console.log('objTrials.ahr ": ', objTrials.ahhh) //loosed type. I was expecting error
+
+console.log()
