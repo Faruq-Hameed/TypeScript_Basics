@@ -1,8 +1,36 @@
 // Index Signatures
 //sometimes we don't know the name of some properties 
-const weirdObject = {
-    'prop-3': 'three',
-    '3': 'three'
-  };
-  
-  weirdObject.prop-3; // => NaN
+
+type Org = {[key: string] : boolean}
+
+const organization: Org = {}
+
+organization.name = !!"Logrocket"
+
+organization.age = !'five'
+organization.pg = !'ibadan'
+
+console.log({organization})
+
+// Moreover, note that you could type key with other primitives:
+
+// number 
+type OrgOne = {[key: number] : string}
+
+// string 
+type OrgTwo = {[key: string] : string}
+
+type objTwo = {[key: number]: number}
+
+const obj : objTwo = {}
+
+obj['0'] = 9
+obj['2'] = 88
+
+const variable = "name"
+
+const objThree = {
+    variable: "faruq"
+}
+
+console.log({objThree})
