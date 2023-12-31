@@ -183,6 +183,12 @@ interface Person {
    
   // works
   let readonlyPerson: ReadonlyPerson = writablePerson;
+  let faruq : ReadonlyPerson = {
+    name: "Person McPersonface",
+    age: 42,
+  };
+
+//   faruq.age++; //
    
   console.log(readonlyPerson.age); // prints '42'
   writablePerson.age++;
