@@ -25,12 +25,14 @@ person2.greet = function(){
 }
 person2.greet()
 
-// var person3 = {
-//     firstName:"Tom", 
-//     lastName:"Hanks", 
-//     sayHello:function() {  }  //Type template 
-//  } 
+var person3 = {
+    firstName:"Tom", 
+    lastName:"Hanks", 
+    sayHello:function(school: "UI" | "OAU") { 
+        console.log(`Hello ${this.firstName} from ${school}`)
+     }  //Type template 
+ } 
 //  person3.sayHello = function() {  
 //     console.log("hello "+person3.firstName)
 //  }  
-//  person3.sayHello()
+ person3.sayHello("OAU")
