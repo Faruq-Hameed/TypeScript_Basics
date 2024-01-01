@@ -36,3 +36,24 @@ var person3 = {
 //     console.log("hello "+person3.firstName)
 //  }  
  person3.sayHello("OAU")
+
+//  Duck-typing
+
+var personA = {
+    name: "John",
+    age: 21
+}
+
+var personB = {
+    name: "John",
+    age: 21,
+    screen_name: "John"
+}
+
+if (typeof personA.name === typeof personB.name){
+    console.log(" they are both same type")
+}
+else {
+    console.log(" they are not same type")
+
+}
