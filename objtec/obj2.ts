@@ -50,7 +50,7 @@ var personB = {
     screen_name: "John"
 }
 
-if (typeof personA.name === typeof personB.name){
+if ( personA.name ===  personB.name){
     console.log(" they are both same type")
 }
 else {
