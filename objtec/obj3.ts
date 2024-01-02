@@ -100,6 +100,7 @@ interface SquareConfig {
 }
 
 function createSquare(config: SquareConfig):{color: string, area: number}{
+    console.log({config})
     return {
         color: config.color || 'red',
         area: config.width ? config.width * config.width : 20
@@ -118,3 +119,4 @@ let square: SquareConfig = {width: 20, opacity:0.9} as SquareConfig
 console.log("square :", square, 'square.width =', square.width, 'square.color =', square.color)
 
 // square.opacity = 9 // error: Property 'opacity' does not exist on type 'SquareConfig'.
+console.log({mySquare}) //{ mySquare: { color: 'red', area: 400 } }
