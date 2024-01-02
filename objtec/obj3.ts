@@ -120,3 +120,17 @@ console.log("square :", square, 'square.width =', square.width, 'square.color ='
 
 // square.opacity = 9 // error: Property 'opacity' does not exist on type 'SquareConfig'.
 console.log({mySquare}) //{ mySquare: { color: 'red', area: 400 } }
+
+// However, a better approach to the above which might be to add a string index signature 
+// if you’re sure that the object can have some extra properties that are used in some special way. 
+// If SquareConfig can have color and width properties with the above types, 
+// but could also have any number of other properties, then we could define it like so:
+
+interface SquareConfig2 {
+    color?: string;
+    width?: number;
+    [propName: string]: any;
+}
+
+// Here what we’re saying above is that SquareConfig can have any number of properties, 
+// and as long as they aren’t color or width, their types don’t matter.
