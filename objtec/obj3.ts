@@ -89,3 +89,32 @@ name: 'faruq'
 
 //ou can make index signatures readonly in order to prevent assignment to their indices:
 // objB[9] = '10' //error
+
+// Excess Property Checks
+// excess property checking, which validates the object more thoroughly 
+// when it is created and assigned to an object type during creation.
+
+interface SquareConfig {
+    width?: number;
+    color?: string;
+}
+
+function createSquare(config: SquareConfig):{color: string, area: number}{
+    return {
+        color: config.color || 'red',
+        area: config.width ? config.width * config.width : 20
+    }
+}
+
+// let mySquare = createSquare({ width: 10, colour: 'green' }); //error
+// If an object literal has any properties that the “target type” doesn’t have, you’ll get an error as above.
+
+// Getting around these checks is actually really simple. The easiest method is to just use a type assertion:
+
+let mySquare = createSquare({width: 20, opacity:0.9} as SquareConfig)
+
+let square: SquareConfig = {width: 20, opacity:0.9} as SquareConfig 
+//if we logged square, opacity will be part of the property but not accessible through square.opacity.
+console.log("square :", square, 'square.width =', square.width, 'square.color =', square.color)
+
+// square.opacity = 9 // error: Property 'opacity' does not exist on type 'SquareConfig'.
