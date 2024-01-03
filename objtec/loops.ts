@@ -7,3 +7,6 @@ interface IAdd {
  }
 
  type AddFn =  (num1: number, num2:number) => number;
+
+ type Jobs = 'salary worker' | 'retired';
+ type VIPClient = Jobs & { benefits: string[]};
