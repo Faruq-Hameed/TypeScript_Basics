@@ -10,3 +10,6 @@ interface IAdd {
 
  type Jobs = 'salary worker' | 'retired';
  type VIPClient = Jobs & { benefits: string[]};
+
+ var VIPClient : VIPClient = {"salary worker":55, benefits: ['all', 'hh']}
+// console.log(VIPClient)
