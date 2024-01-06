@@ -1,5 +1,7 @@
 // Types vs. interfaces in TypeScript
 
+import { Agent } from "undici-types";
+
 // Type aliases in TypeScript mean “a name for any type.”
 
 type MyNumber = number;
@@ -30,14 +32,26 @@ const funcTwo : AddFn = function (num1: number, num2: number){
 
 interface IAdd {
     (num1: number, num2: number): number;
-    name: string;
+    school: string;
 }
 
 const funcThree : IAdd = (number1: number, number2: number): number => number1
+funcThree.school = 'ui'
 const funcFour : IAdd = function(number1: number, number2: number): number {
     return number1
 } 
-let objTwo: IAdd = {
-name: 'two',
+funcFour.school = 'ui'
+// let objTwo: IAdd = (age: number, level: number): number =>{ //the object parameter can be named anything but same type
+//     return age * level
+// }
+// objTwo.school = 'UI'
+// You cannot directly assign properties to arrow functions. To resolve this error, 
+// you need to create an object that matches the IAdd interface with both the function and the school property.
 
-}
+// let objTwo : IAdd = {
+//     (age: number, level: number): number {
+//             return age * level
+
+//     },
+//     school : 'ui'
+// }
