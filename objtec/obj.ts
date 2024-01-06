@@ -24,10 +24,11 @@ type objTwo = {[key: number]: number}
 
 const obj : objTwo = {}
 
-obj['0'] = 9
-obj['2'] = 88
+obj[0] = 9
+obj[2] = 88
+obj[5] = 89
 
-const variable = "name"
+const variable = 'name'
 
 const objThree = {
     variable: "faruq"
@@ -36,13 +37,16 @@ const objThree = {
 console.log({objThree}) // { variable: 'faruq' }
 
 const objFour = {
-    [variable]: "faruq"
+    [variable]: 8 //we are setting the variable property value to 8.
+}
+const objFive:OrgTwo = {
+    [variable]: 'hello' //we set the variable property(name) value to "hello" which follows the OrgTwo index signature.
 }
 console.log({objFour}) // { name: 'faruq' }
 
-// The TypeScript concept  practiced above is called an object index signature.
+// The TypeScript concepts  practiced above is called an object index signature.
 
-// Instead of using a type alias, you can also inline the type:
+// Instead of using a type alias to explicity annotate the type, you can also inline the type:
 const objTrial : {[key: string] : string} = {}
 
 objTrial.name = "faruq"
