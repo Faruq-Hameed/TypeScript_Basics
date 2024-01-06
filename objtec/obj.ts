@@ -1,7 +1,7 @@
 // Index Signatures
 //sometimes we don't know the name of some properties 
 
-type Org = {[key: string] : boolean}
+type Org = { [key: string]: boolean }
 
 const organization: Org = {}
 
@@ -10,19 +10,19 @@ organization.name = !!"Logrocket"
 organization.age = !'five'
 organization.pg = !'ibadan'
 
-console.log({organization})
+console.log({ organization })
 
 // Moreover, note that you could type key with other primitives:
 
 // number 
-type OrgOne = {[key: number] : string}
+type OrgOne = { [key: number]: string }
 
 // string 
-type OrgTwo = {[key: string] : string}
+type OrgTwo = { [key: string]: string }
 
-type objTwo = {[key: number]: number}
+type objTwo = { [key: number]: number }
 
-const obj : objTwo = {}
+const obj: objTwo = {}
 
 obj[0] = 9
 obj[2] = 88
@@ -34,45 +34,46 @@ const objThree = {
     variable: "faruq"
 }
 
-console.log({objThree}) // { variable: 'faruq' }
+console.log({ objThree }) // { variable: 'faruq' }
 
 const objFour = {
     [variable]: 8 //we are setting the variable property value to 8.
 }
-const objFive:OrgTwo = {
+const objFive: OrgTwo = {
     [variable]: 'hello' //we set the variable property(name) value to "hello" which follows the OrgTwo index signature.
 }
-console.log({objFour}) // { name: 'faruq' }
+console.log({ objFour }) // { name: 'faruq' }
 
 // The TypeScript concepts  practiced above is called an object index signature.
 
 // Instead of using a type alias to explicity annotate the type, you can also inline the type:
-const objTrial : {[key: string] : string} = {}
+const objTrial: { [key: string]: string } = {}
 
 objTrial.name = "faruq"
 
-objTrial['age'] = 'five'
+objTrial.age = 'five'
+objTrial[0] = 'five'
+// objTrial.9 = 'five'
 
-console.log({objTrial})
 
-const objTrials : {[key: string] : object} = {}
+console.log({ objTrial })
 
-interface readOnly  {
+const objTrials: { [key: string]: object } = {}
+
+interface ReadOnly {
     readonly name: string,
 }
 
-const readonlyObjTrial : readOnly = {
+const readonlyObjTrial: ReadOnly = {
     name: 'readonly'
 }
-console.log()
-objTrials.unread = {readonlyObjTrial}
+
+objTrials.unread = { readonlyObjTrial }
 // readonlyObjTrial.name = 'hhhh' //error
 objTrials.name = {}
 console.log('objTrials.ahr ": ', objTrials.ahhh) //loosed type. I was expecting error
 
-console.log()
-
-const test : {[key: string] : string} = {}
+const test: { [key: string]: string } = {}
 const obj2 = {
     name: 'faruq'
 }
@@ -86,16 +87,16 @@ const obj2 = {
 // whose properties are Keys and property values are Type. 
 // It has the following signature: Record<Keys, Type>.
 
-type ObjType  = Record<string, string>;
+type ObjType = Record<string, string>;
 
-const objA : ObjType = {};
+const objA: ObjType = {};
 objA.name = 'faruq'
 
 //the record utility type also works like the index signature types.
 
 // Instead of using a type alias, you can also inline the type:
 
-let company : Record<string, string> = {}
+let company: Record<string, string> = {}
 company.name = 'faruq'
 
 
@@ -109,9 +110,9 @@ const organizationTwo = {}
 // organizationTwo.name = "Logrocket"  //error
 const organizationThree = new Map()
 
-organizationThree.set("name","Logrocket")
+organizationThree.set("name", "Logrocket")
 
-console.log({organizationThree})
+console.log({ organizationThree })
 console.log("typeof organizationThree === " + organizationThree)
 
 console.log('organizationThree.get("age") === "' + organizationThree.get("age"))
