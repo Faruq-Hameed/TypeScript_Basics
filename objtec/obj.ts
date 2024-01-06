@@ -123,6 +123,9 @@ console.log('organizationThree.get("name") === "' + organizationThree.get("name"
 console.log('typeof organizationThree.get("name") === "' + typeof organizationThree.get("name"))
 console.log('typeof organizationThree === "' + typeof organizationThree)
 
+let objAFG = organizationThree
+// objAFG.name = ''// error
+console.log({objAFG})
 
 
 
