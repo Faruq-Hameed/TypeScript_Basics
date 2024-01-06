@@ -51,8 +51,9 @@ interface OptionalProperty{
 
 function optionalProperty(obj: OptionalProperty){
     console.log(obj.shape)
-    console.log(obj.xPos)!
+    console.log(obj.xPos)
     if(obj.xPos === 3){
+      console.log(obj.xPos)
 
     }
     console.log(obj.yPos)
@@ -64,9 +65,20 @@ optionalProperty({shape:'square'})
 
 function optionalPropertyTwo(obj: OptionalProperty){
    let x = obj.xPos;
-//    x.toString() //error
+  //  x.toString() //error{
+  //   let x = obj.xPos!; //this strictNullability check will avert the error
+  //  }
     console.log(obj.yPos)
 }
+
+function optionalPropertyTwoA(obj: OptionalProperty){
+  let x = obj.xPos!; //this strictNullability should be used only when we are sure that !undefined
+  x.toString() 
+  console.log('checking property...')
+
+   console.log({x})
+}
+// optionalPropertyTwoA({shape: 'circle'}) //this made the function to throw an error
 
 // We can just handle undefined specially by checking for it.
 function optionalPropertyThree(obj: OptionalProperty){
@@ -158,7 +170,9 @@ function updateResidentTwo (prop: ResidentTwo){
 const {street, person} = prop.address
 prop.address.person = { name: person.name, age: person.age + 1}
 // prop.address.street = { name: person.name + ' ibadan', age: person.age + 1} //not mutable
-prop.address.street.name = person.name + ' ibadan' //this is immutable
+prop.address.street.name = person.name + ' ibadan' //this is mutable
+// prop.address.street = person.name + ' ibadan' //this is immutable
+
 
 }
 
