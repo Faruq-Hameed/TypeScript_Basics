@@ -19,7 +19,6 @@ var person2 = {
     age: 21,
     greet:function(){ } //type literal //Type template
 }
-
 person2.greet = function(){
     console.log("hello "+person2.name)
 }
