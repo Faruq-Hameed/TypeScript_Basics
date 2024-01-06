@@ -31,7 +31,7 @@ var personA = {
     greet:function(level: string){
     console.log("hello");
 
-     } //type literal //Type template
+     } 
 }
 
 personA.greet = function(l: string) {
