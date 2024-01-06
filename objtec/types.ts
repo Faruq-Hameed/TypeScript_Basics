@@ -112,3 +112,30 @@ type Job = "Engr" | "Doc"
 // interface IJob extends Job{
 //     password: string
 // }
+
+type AK = Ajibola & Faruq & {
+    friendship: string
+}
+
+const ak : AK = {
+    school: 'UI', level: 6, name: 'faruq', age: 36, graduate: true,
+    friendship: 'kenny'
+}
+
+// Working with tuple types
+//tuple type allows us to express an array with a fixed number of elements, where each element has its data type
+
+type TeamMember = [names: string, role: string, age: number];
+type TeamMemberD = [names: 'string', role: 'string', age: number];
+const team : TeamMember = ['far','doc',7]
+const teamD : TeamMemberD = ['string','string',7]
+
+// it is not as concise or readable as using the tuple type as type alias has direct support for tuple types
+
+interface ITeamMember extends Array<string | number> 
+{
+ 0: string; 1: string; 2: number 
+}
+
+const peter: ITeamMember = ['Harry', 'Dev', 24];
+// const Tom: ITeamMember = ['Tom', 30, 'Manager']; //Error: Type 'number' is not assignable to type 'string'.
