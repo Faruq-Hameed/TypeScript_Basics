@@ -5,7 +5,7 @@ var person = {
     age: 21,
 }
 
-// person.greet= function (){ //not possible in TS for concrete object like Person
+// person.greet= function (){ //not possible in TS for concrete object like person
 //     console.log(person.name);
 // }
 
@@ -17,13 +17,28 @@ var person = {
 var person2 = {
     name: 'John',
     age: 21,
-    greet:function(){ } //type literal
+    greet:function(){ } //type literal //Type template
 }
 
 person2.greet = function(){
     console.log("hello "+person2.name)
 }
 person2.greet()
+
+var personA = {
+    name: 'John',
+    age: 21,
+    greet:function(level: string){
+    console.log("hello");
+
+     } //type literal //Type template
+}
+
+personA.greet = function(l: string) {
+    console.log("hello "+personA.name+" "+l);
+}
+personA.greet('five')
+
 
 var person3 = {
     firstName:"Tom", 
