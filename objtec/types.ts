@@ -61,3 +61,54 @@ objTwo.school = 'UI'
 //     },
 //     school : 'ui'
 // }
+// Declaration merging
+// With declaration merging, we can define an interface multiple times
+
+interface Person {
+    name: string;
+}
+
+interface Person{
+    age: number;
+}
+
+const person: Person ={
+    name: "Faruq",
+    age: 24
+
+}
+// Type aliases can’t be merged in the same way. 
+
+
+
+// Extends vs. intersection
+
+// An interface can extend one or multiple interfaces. 
+// Using the extendskeyword, a new interface can inherit all the properties 
+// and methods of an existing interface while also adding new properties.
+
+interface Faruq extends Person {
+    school: string;
+    level: number;
+}
+
+const faruq : Faruq ={
+    school: 'UI', level: 6, name: 'faruq', age: 36,
+}
+
+// To achieve a similar result for types, we need to use an intersection operator:
+
+type Ajibola = Faruq & {graduate: boolean}
+
+const aji: Ajibola = {
+    school: 'UI', level: 6, name: 'faruq', age: 36, graduate: true
+}
+
+// The exception is union types. If you try to extend an interface from a union type
+
+type Job = "Engr" | "Doc"
+
+// An interface can only extend an object type or intersection of object types with statically known members
+// interface IJob extends Job{
+//     password: string
+// }
