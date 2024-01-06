@@ -111,12 +111,18 @@ const organizationTwo = {}
 const organizationThree = new Map()
 
 organizationThree.set("name", "Logrocket")
+organizationThree.set("age", 8)
 
+console.log({ organizationThree })
+organizationThree.set("name", "Updated Logrocket")
 console.log({ organizationThree })
 console.log("typeof organizationThree === " + organizationThree)
 
 console.log('organizationThree.get("age") === "' + organizationThree.get("age"))
 console.log('organizationThree.get("name") === "' + organizationThree.get("name"))
 console.log('typeof organizationThree.get("name") === "' + typeof organizationThree.get("name"))
+console.log('typeof organizationThree === "' + typeof organizationThree)
+
+
 
 
