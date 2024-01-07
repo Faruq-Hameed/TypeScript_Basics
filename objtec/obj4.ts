@@ -113,3 +113,23 @@ interface BoxType<Type>{
 function setContentsTwo <Type>(box: BoxType<Type>, newContents: Type): void {
   box.contents = newContents;
 }
+
+// It is worth noting that type aliases can also be generic
+
+interface Faruq {
+level: string;
+}
+
+type BoxTypeTwo <Type> = {
+  contents: Type;
+}
+
+let boxTypeE : BoxTypeTwo<string> = {  contents: "hello E"}
+
+type BoxTypeF<Type> = Faruq & BoxTypeTwo<Type>
+
+let boxTypeF : BoxTypeF<string> = {level: 'five', contents: "hello F"}
+
+type BoxTypeG<Type> = typeof boxTypeF & {pg: Type, age: number}
+
+let boxTypeG : BoxTypeG<string[]> = { level: 'five',pg: ["a"], age: 8, contents:"hello G"}
