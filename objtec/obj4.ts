@@ -50,16 +50,24 @@ function setContents(box: any, newContents: any): void{
 //Generic type
 
 interface BoxType<Type>{
-contents: Type
+  readonly contents: Type
 }
 // You might read this as “A Box of Type is something whose contents have type Type”. 
 // Later on, when we refer to Box, we have to give a type argument in place of Type.
 
 let boxType: BoxType<string>
 boxType = {
-  contents: 'hello'
+   contents: null?? "world"
 }
-boxType.contents = 'box'
+// boxType.contents = 'box'
 
-console.log(boxType)
+console.log({boxType})
+// In other words, Box<string> and our earlier StringBox work identically.
 
+let boxA: BoxType<string> = {contents: 'hello world'}
+boxA.contents; //(property) BoxType<string>.contents: string
+
+let boxB :StringBox = {contents: 'hello world'}
+boxB.contents; //(property) StringBox.contents: string
+
+console.log(boxB.contents)
