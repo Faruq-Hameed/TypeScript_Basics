@@ -84,7 +84,7 @@ const person: Person ={
 // Extends vs. intersection
 
 // An interface can extend one or multiple interfaces. 
-// Using the extendskeyword, a new interface can inherit all the properties 
+// Using the extends keyword, a new interface can inherit all the properties 
 // and methods of an existing interface while also adding new properties.
 
 interface Faruq extends Person {
@@ -93,7 +93,7 @@ interface Faruq extends Person {
 }
 
 const faruq : Faruq ={
-    school: 'UI', level: 6, name: 'faruq', age: 36,
+    school: 'UI', level: 6, name: 'faruq', age: 36,le: true,
 }
 
 // To achieve a similar result for types, we need to use an intersection operator:
@@ -101,7 +101,7 @@ const faruq : Faruq ={
 type Ajibola = Faruq & {graduate: boolean}
 
 const aji: Ajibola = {
-    school: 'UI', level: 6, name: 'faruq', age: 36, graduate: true
+    school: 'UI', level: 6, name: 'faruq', age: 36, graduate: true, 
 }
 
 // The exception is union types. If you try to extend an interface from a union type
@@ -137,7 +137,8 @@ const teamB: TeamMemberB = [{
     name: 'faruq'
 }, {age: 28}]
 
-// it is not as concise or readable as using the tuple type as type alias has direct support for tuple types
+// it is not as concise or readable as using interface the tuple type as 
+// type alias has direct support for tuple types looked at interface tuple type below;
 
 interface ITeamMember extends Array<string | number> 
 {
