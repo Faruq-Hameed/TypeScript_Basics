@@ -133,3 +133,20 @@ let boxTypeF : BoxTypeF<string> = {level: 'five', contents: "hello F"}
 type BoxTypeG<Type> = typeof boxTypeF & {pg: Type, age: number}
 
 let boxTypeG : BoxTypeG<string[]> = { level: 'five',pg: ["a"], age: 8, contents:"hello G"}
+
+
+// Since type aliases, unlike interfaces, can describe more than just object types, 
+// we can also use them to write other kinds of generic helper types.
+
+type OrNull<Type> = Type | boolean | null
+
+let nullT: OrNull <string> = !!undefined
+
+console.log({nullT}) //{ nullT: false }
+
+type OneOrMany<Type> = Type | Type[]
+
+let oneOrManyT: OneOrMany<number> = 9
+let oneOrManyB: OneOrMany<number[]> = [9]
+
+type OneOrManyOrNull<Type, TypeA> = OrNull<OneOrMany<Type>>
