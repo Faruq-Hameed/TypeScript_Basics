@@ -50,7 +50,7 @@ function setContents(box: any, newContents: any): void{
 //Generic type
 
 interface BoxType<Type>{
-  readonly contents: Type
+   contents: Type
 }
 // You might read this as “A Box of Type is something whose contents have type Type”. 
 // Later on, when we refer to Box, we have to give a type argument in place of Type.
@@ -70,4 +70,46 @@ boxA.contents; //(property) BoxType<string>.contents: string
 let boxB :StringBox = {contents: 'hello world'}
 boxB.contents; //(property) StringBox.contents: string
 
+let boxC : BoxType<number[]> = {contents: [9]} // the BoxType can be reused at anytime
+// Box is reusable in that Type can be substituted with anything. 
+// That means that when we need a box for a new type, we don’t need 
+// to declare a new Box type at all as we did above with boxC (though we certainly could if we wanted to).
+
 console.log(boxB.contents)
+
+
+type Boxes<Type> ={ // we can also use it with type alias but interface is mostly used for objects
+contents: Type
+}
+
+let boxesA : Boxes<string> = {contents: 'hello world'}
+let boxesB : Boxes<any[]> = {contents: ['hello world', 9]};
+
+interface BoxChecks <Type> {
+  contents: Type;
+}
+
+interface Apple{
+
+}
+
+// Same as '{ contents: Apple }'.
+type AppleBox = BoxChecks<Apple>
+
+// This also means that we can avoid setContents overloads entirely by instead using generic functions.
+/*
+function setContents(box: StringBox, newContents: string): void;
+function setContents(box: BooleanBox, newContents: boolean): void;
+function setContents(box: NumberBox, newContents: number): void;
+function setContents(box: any, newContents: any): void{
+  box.contents = newContents;
+}
+
+interface BoxType<Type>{
+   contents: Type
+}
+*/ 
+
+function setContentsTwo <Type>(box: BoxType<Type>, newContents: Type): void {
+  box.contents = newContents;
+}
