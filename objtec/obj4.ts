@@ -41,5 +41,20 @@ function setContents(box: BooleanBox, newContents: boolean): void;
 function setContents(box: NumberBox, newContents: number): void;
 function setContents(box: any, newContents: any): void{
   box.contents = newContents;
-
 }
+
+// That’s a lot of boilerplate. Moreover, we might later need to introduce new types and overloads. 
+// This is frustrating, since our box types and overloads are all effectively the same.
+
+// Instead, we can make a generic Box type which declares a type parameter.
+//Generic type
+
+interface BoxType<Type>{
+contents: Type
+}
+// You might read this as “A Box of Type is something whose contents have type Type”. 
+// Later on, when we refer to Box, we have to give a type argument in place of Type.
+
+let boxType: BoxType<string>
+boxType.contents = 'box'
+
