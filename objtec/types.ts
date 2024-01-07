@@ -127,8 +127,15 @@ const ak : AK = {
 
 type TeamMember = [names: string, role: string, age: number];
 type TeamMemberD = [names: 'string', role: 'string', age: number];
+type TeamMemberA = [string, string, number]; //it can be written this way too
+type TeamMemberB = [{name: string}, {age: number}]; //it can be written this way too
+
 const team : TeamMember = ['far','doc',7]
 const teamD : TeamMemberD = ['string','string',7]
+const teamA : TeamMemberA = ['boy', 'null', 8]
+const teamB: TeamMemberB = [{
+    name: 'faruq'
+}, {age: 28}]
 
 // it is not as concise or readable as using the tuple type as type alias has direct support for tuple types
 
