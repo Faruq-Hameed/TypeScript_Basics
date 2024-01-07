@@ -56,5 +56,10 @@ contents: Type
 // Later on, when we refer to Box, we have to give a type argument in place of Type.
 
 let boxType: BoxType<string>
+boxType = {
+  contents: 'hello'
+}
 boxType.contents = 'box'
+
+console.log(boxType)
 
