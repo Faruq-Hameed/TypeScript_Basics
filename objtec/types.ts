@@ -93,7 +93,7 @@ interface Faruq extends Person {
 }
 
 const faruq : Faruq ={
-    school: 'UI', level: 6, name: 'faruq', age: '36',
+    school: 'UI', level: 6, name: 'faruq', age: 36
 }
 
 // To achieve a similar result for types, we need to use an intersection operator:
@@ -101,7 +101,7 @@ const faruq : Faruq ={
 type Ajibola = Faruq & {graduate: boolean}
 
 const aji: Ajibola = {
-    school: 'UI', level: 6, name: 'faruq', age: '36', graduate: true, 
+    school: 'UI', level: 6, name: 'faruq', age: 36, graduate: true, 
 }
 
 // The exception is union types. If you try to extend an interface from a union type
@@ -121,6 +121,8 @@ const ak : AK = {
     school: 'UI', level: 6, name: 'faruq', age: 36, graduate: true,
     friendship: 'kenny'
 }
+// The principal difference between the two(intersection and extend) is how conflicts are handled.
+
 
 // Working with tuple types
 //tuple type allows us to express an array with a fixed number of elements, where each element has its data type
