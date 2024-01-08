@@ -139,7 +139,7 @@ type BoxTypeTwo <Type> = {
 
 let boxTypeE : BoxTypeTwo<string> = {  contents: "hello E"}
 
-type BoxTypeF<Type> = Faruq & BoxTypeTwo<Type>
+type BoxTypeF<Type> = Faruq & BoxTypeTwo<Type> //using intersection
 
 let boxTypeF : BoxTypeF<string> = {level: 'five', contents: "hello F"}
 
