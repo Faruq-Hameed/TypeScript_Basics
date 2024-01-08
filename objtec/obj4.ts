@@ -57,17 +57,17 @@ interface BoxTypeD<Type, TypeB>{
   readonly content: TypeB
 }
 
-let boxtypeD : BoxTypeD<string, number[]> = {
+let boxTypeD : BoxTypeD<string, number[]> = {
    content: [],
   contents: 'ggg'
 
 }
-boxtypeD.content.push(9)
-// boxtypeD.content= 8
+boxTypeD.content.push(9)
+// boxTypeD.content= 8
 // You might read this as “A Box of Type is something whose contents have type Type”. 
 // Later on, when we refer to Box, we have to give a type argument in place of Type.
 
-let boxType: BoxType<string>
+let boxType: BoxType<string>;
 boxType = {
    contents: null?? "world"
 }
