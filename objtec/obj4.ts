@@ -52,6 +52,18 @@ function setContents(box: any, newContents: any): void{
 interface BoxType<Type>{
    contents: Type
 }
+interface BoxTypeD<Type, TypeB>{
+  contents: Type
+  readonly content: TypeB
+}
+
+let boxtypeD : BoxTypeD<string, number[]> = {
+   content: [],
+  contents: 'ggg'
+
+}
+boxtypeD.content.push(9)
+// boxtypeD.content= 8
 // You might read this as “A Box of Type is something whose contents have type Type”. 
 // Later on, when we refer to Box, we have to give a type argument in place of Type.
 
