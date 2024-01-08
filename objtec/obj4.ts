@@ -162,4 +162,4 @@ type OneOrMany<Type> = Type | Type[]
 let oneOrManyT: OneOrMany<number> = 9
 let oneOrManyB: OneOrMany<number[]> = [9]
 
-type OneOrManyOrNull<Type, TypeA> = OrNull<OneOrMany<Type>>
+type OneOrManyOrNull<Type> = OrNull<OneOrMany<Type>>
