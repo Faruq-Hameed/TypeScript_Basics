@@ -108,7 +108,6 @@ interface Apple{
 // Same as '{ contents: Apple }'.
 type AppleBox = BoxChecks<Apple>
 
-let appleBox : AppleBox = {contents: 'apple'}
 
 // This also means that we can avoid setContents overloads entirely by instead using generic functions.
 /*
