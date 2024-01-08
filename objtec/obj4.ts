@@ -153,7 +153,7 @@ let boxTypeG : BoxTypeG<string[]> = { level: 'five',pg: ["a"], age: 8, contents:
 
 type OrNull<Type> = Type | boolean | null
 
-let nullT: OrNull <string> = !!undefined
+let nullT: OrNull <string> = !!undefined //type string but string, boolean, or null can be passed
 
 console.log({nullT}) //{ nullT: false }
 
