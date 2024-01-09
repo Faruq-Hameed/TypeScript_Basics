@@ -64,7 +64,7 @@ function readOnlyAB(value: readonly string[]): readonly string[]{ //returning re
 
 let result = readOnlyAB(readOnlyB)
 // result.push('a') //result too is not mutable
-result[0] = ''
+result[0] = '' //result too is not mutable
 
 
 function readOnlyABC(value: readonly number[]): readonly number[]{ //returning readonly string array
