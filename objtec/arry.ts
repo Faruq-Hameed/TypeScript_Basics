@@ -49,5 +49,5 @@ without worrying that it will change its contents. */
 // new ReadonlyArray("red", "green", "blue"); //error
 
 // Instead, we can assign regular Arrays to ReadonlyArrays.
-
-
+let readOnly : ReadonlyArray<string> = ['a', 'b', 'c'] //not mutable array
+let readOnlyArray = readOnly;
