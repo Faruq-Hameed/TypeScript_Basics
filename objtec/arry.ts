@@ -39,9 +39,8 @@ function readonlyArray(value: ReadonlyArray<string>): void{
     // value.push(array); //Property 'push' does not exist on type 'readonly string[]'
 }
 
-Much like the readonly modifier for properties, 
+/* Much like the readonly modifier for properties, 
 it’s mainly a tool we can use for intent. When we see a function that returns ReadonlyArrays, 
 it tells us we’re not meant to change the contents at all, and when we see a function 
-that consumes ReadonlyArrays, 
-it tells us that we can pass any array into that function 
-without worrying that it will change its contents.
+that consumes ReadonlyArrays, it tells us that we can pass any array into that function 
+without worrying that it will change its contents. */
