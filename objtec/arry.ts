@@ -13,4 +13,4 @@ let boxA: Box<Array<number>>={
     contents: [1, 2, 5]
 }
 
-let boxB: Box<Array<string>> = {contents: ['a', 'b', 6]}
+let boxB: Box<Array<string>> = {contents: ['a', 'b']}
