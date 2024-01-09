@@ -51,3 +51,16 @@ without worrying that it will change its contents. */
 // Instead, we can assign regular Arrays to ReadonlyArrays.
 let readOnly : ReadonlyArray<string> = ['a', 'b', 'c'] //not mutable array
 let readOnlyArray = readOnly; //not mutable array
+
+
+// Just as TypeScript provides a shorthand syntax for Array<Type> with Type[], 
+// it also provides a shorthand syntax for ReadonlyArray<Type> with readonly Type[].
+
+let readOnlyB : readonly string[] = ['a', 'b', 'c'] 
+
+function readOnlyAB(value: readonly string[]): readonly string[]{
+    return value;
+}
+
+let result = readOnlyAB(readOnlyB)
+result.push('a') //result too is not mutable
