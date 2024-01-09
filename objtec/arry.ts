@@ -88,5 +88,5 @@ function doStuff(values: readonly string[]) {
 let y: string[] = [];
  
 x = y;
-// y = x;
+// y = x; //error
 // The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'string[]'.
