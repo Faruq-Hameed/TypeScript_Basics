@@ -72,7 +72,7 @@ function readOnlyABC(value: readonly number[]): readonly number[]{ //returning r
 }
 let resultB = readOnlyABC([9,6,6])
 // result.push('a') //result too is not mutable
-// resultB[0]++ //result too is not mutable
+// resultB[0]++ //resultB too is not mutable
 
 function doStuff(values: readonly string[]) {
     // We can read from 'values'...
@@ -83,3 +83,10 @@ function doStuff(values: readonly string[]) {
     // values.push("hello!"); //error
 //   Property 'push' does not exist on type 'readonly string[]'.
   }
+
+  let x: readonly string[] = [];
+let y: string[] = [];
+ 
+x = y;
+y = x;
+The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'string[]'.
