@@ -32,3 +32,16 @@ function doSomethingA(value: Array<string>): void {
 doSomethingA(new Array("a", "b", "c", "d"))
 
 //The ReadonlyArray Type
+// The ReadonlyArray is a special type that describes arrays that shouldn’t be changed.
+
+function readonlyArray(value: ReadonlyArray<string>): void{
+    const array = value.slice(0, value.length); //it is readable not writeable
+    // value.push(array); //Property 'push' does not exist on type 'readonly string[]'
+}
+
+Much like the readonly modifier for properties, 
+it’s mainly a tool we can use for intent. When we see a function that returns ReadonlyArrays, 
+it tells us we’re not meant to change the contents at all, and when we see a function 
+that consumes ReadonlyArrays, 
+it tells us that we can pass any array into that function 
+without worrying that it will change its contents.
