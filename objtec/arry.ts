@@ -50,4 +50,4 @@ without worrying that it will change its contents. */
 
 // Instead, we can assign regular Arrays to ReadonlyArrays.
 let readOnly : ReadonlyArray<string> = ['a', 'b', 'c'] //not mutable array
-let readOnlyArray = readOnly;
+let readOnlyArray = readOnly; //not mutable array
