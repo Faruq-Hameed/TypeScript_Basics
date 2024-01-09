@@ -17,12 +17,14 @@ let boxB: Box<Array<string>> = {contents: ['a', 'b']}
 
 function doSomething(value: Array<number>): void {
     console.log({value})
-    value.length = 0
-    console.log({value})
-    value.length= 5;
-    value = value
-    console.log({value})
 
 }
 
 doSomething(boxA.contents)
+
+doSomething(new Array(1, 2))
+
+function doSomethingA(value: Array<string>): void {
+    console.log({value})
+
+}
