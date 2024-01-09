@@ -58,9 +58,9 @@ let readOnlyArray = readOnly; //not mutable array
 
 let readOnlyB : readonly string[] = ['a', 'b', 'c'] 
 
-function readOnlyAB(value: readonly string[]): readonly string[]{
+function readOnlyAB(value: readonly string[]): readonly string[]{ //returning readonly string array
     return value;
 }
 
 let result = readOnlyAB(readOnlyB)
-result.push('a') //result too is not mutable
+// result.push('a') //result too is not mutable
