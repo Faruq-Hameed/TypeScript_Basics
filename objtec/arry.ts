@@ -64,3 +64,22 @@ function readOnlyAB(value: readonly string[]): readonly string[]{ //returning re
 
 let result = readOnlyAB(readOnlyB)
 // result.push('a') //result too is not mutable
+result[0] = ''
+
+
+function readOnlyABC(value: readonly number[]): readonly number[]{ //returning readonly string array
+    return value;
+}
+let resultB = readOnlyABC([9,6,6])
+// result.push('a') //result too is not mutable
+// resultB[0]++ //result too is not mutable
+
+function doStuff(values: readonly string[]) {
+    // We can read from 'values'...
+    const copy = values.slice();
+    console.log(`The first value is ${values[0]}`);
+   
+    // ...but we can't mutate 'values'.
+    // values.push("hello!"); //error
+//   Property 'push' does not exist on type 'readonly string[]'.
+  }
