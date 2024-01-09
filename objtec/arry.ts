@@ -28,3 +28,7 @@ function doSomethingA(value: Array<string>): void {
     console.log({value})
 
 }
+
+doSomethingA(new Array("a", "b", "c", "d"))
+
+//The ReadonlyArray Type
