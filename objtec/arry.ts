@@ -14,3 +14,15 @@ let boxA: Box<Array<number>>={
 }
 
 let boxB: Box<Array<string>> = {contents: ['a', 'b']}
+
+function doSomething(value: Array<number>): void {
+    console.log({value})
+    value.length = 0
+    console.log({value})
+    value.length= 5;
+    value = value
+    console.log({value})
+
+}
+
+doSomething(boxA.contents)
