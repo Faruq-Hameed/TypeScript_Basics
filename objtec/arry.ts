@@ -44,3 +44,10 @@ it’s mainly a tool we can use for intent. When we see a function that returns 
 it tells us we’re not meant to change the contents at all, and when we see a function 
 that consumes ReadonlyArrays, it tells us that we can pass any array into that function 
 without worrying that it will change its contents. */
+
+// Unlike Array, there isn’t a ReadonlyArray constructor that we can use.
+// new ReadonlyArray("red", "green", "blue"); //error
+
+// Instead, we can assign regular Arrays to ReadonlyArrays.
+
+
