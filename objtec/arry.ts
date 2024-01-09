@@ -89,4 +89,4 @@ let y: string[] = [];
  
 x = y;
 y = x;
-The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'string[]'.
+// The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'string[]'.
