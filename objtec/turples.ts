@@ -55,6 +55,32 @@ let StringNumberPairB : StringNumberPair = ['apple', 4]
 // Optional tuple elements can only come at the end, and also affect the type of length.
 // A required element cannot follow an optional element
 
-type OptionalTuple = [number?, string, boolean, 'hello'?]
+type OptionalTuple = [number, string, boolean, 'hello'?]
 
 let optionalTuple : OptionalTuple = [0, 'hello', true]
+
+function getOptionalTuple(array: OptionalTuple): void{
+ let [numA, str, boo, strA] = array 
+ let d = strA
+d?.split(':')
+}
+
+// Tuples can also have rest elements, which have to be an array/tuple type.
+
+type StringNumberBooleans = [string, number, ...boolean[]];
+type StringBooleansNumber = [string, ...boolean[], number];
+type BooleansStringNumber = [...boolean[], string, number];
+
+// StringNumberBooleans describes a tuple whose first two elements are string and number respectively, 
+// but which may have any number of booleans following.
+// StringBooleansNumber describes a tuple whose first element is string and then any number of booleans 
+// and ending with a number.
+// BooleansStringNumber describes a tuple whose starting elements are any number of booleans 
+// and ending with a string then a number.
+
+// A tuple with a rest element has no set “length” 
+// - it only has a set of well-known elements in different positions.
+
+const a: StringNumberBooleans = ["hello", 1];
+const b: StringNumberBooleans = ["beautiful", 2, true];
+const c: StringNumberBooleans = ["world", 3, true, false, true, false, true]
