@@ -19,7 +19,7 @@ console.log(numbObj.contents)
 
 // We can also destructure tuples using JavaScript’s array destructuring.
 
-function doStuff (stringHash: [number, string]){
+function doStuff (stringHash: NumberStringPair){
     const [num, str] = stringHash 
      
 }
@@ -29,9 +29,6 @@ function doSomething(stringHash: [string, number]) {
    
     console.log(inputString);
                     
-  const inputString: string
    
     console.log(hash);
-                 
-  const hash: number
-  }
+ }
