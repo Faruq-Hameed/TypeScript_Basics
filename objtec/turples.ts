@@ -48,4 +48,12 @@ let StringNumberPair : StringNumberPair = {
   0: 'oo',
   1: 7
 }
-StringNumberPair[0]
+let StringNumberPairB : StringNumberPair = ['apple', 4]
+
+// Another thing you may be interested in is that tuples can have 
+// optional properties by writing out a question mark (? after an element’s type). 
+// Optional tuple elements can only come at the end, and also affect the type of length.
+
+type StringNumberSecond = NumberStringPair & boolean 
+
+let strNumInt : StringNumberSecond = [[9, 'happy',] true];
