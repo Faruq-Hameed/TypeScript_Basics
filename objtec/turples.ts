@@ -32,3 +32,20 @@ function doSomething(stringHash: [string, number]) {
    
     console.log(hash);
  }
+
+ interface StringNumberPair {
+  // specialized properties
+  length: 2;
+  0: string;
+  1: number;
+ 
+  // Other 'Array<string | number>' members...
+  // slice(start?: number, end?: number): Array<string | number>;
+}
+
+let StringNumberPair : StringNumberPair = {
+  length: 2,
+  0: 'oo',
+  1: 7
+}
+StringNumberPair[0]
