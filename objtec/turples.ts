@@ -114,3 +114,6 @@ function readOnlyTuple (arry: readonly [string, number]){
 
 let point = [3, 4] as const; //readonly tuple
 let pointB = [3, 4];
+
+interface Square extend Shape {}
+
