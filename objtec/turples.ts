@@ -53,7 +53,8 @@ let StringNumberPairB : StringNumberPair = ['apple', 4]
 // Another thing you may be interested in is that tuples can have 
 // optional properties by writing out a question mark (? after an element’s type). 
 // Optional tuple elements can only come at the end, and also affect the type of length.
+// A required element cannot follow an optional element
 
-type StringNumberSecond = NumberStringPair & boolean 
+type OptionalTuple = [number?, string, boolean, 'hello'?]
 
-let strNumInt : StringNumberSecond = [[9, 'happy',] true];
+let optionalTuple : OptionalTuple = [0, 'hello', true]
