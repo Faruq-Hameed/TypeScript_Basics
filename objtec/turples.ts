@@ -97,3 +97,14 @@ function readButtonInput(...args: [string, number, ...boolean[]]) {
 function readButtonInputB(name: string, version: number, ...input: boolean[]) {
   // ...
 }
+
+// readonly Tuple Types
+// tuple types have readonly variants, and can be specified by sticking a readonly modifier in front of them 
+// - just like with array shorthand syntax.
+
+function readOnlyTuple (arry: readonly [string, number]){
+  let [str, num] = arry;
+  str = 'hello'
+  // arry[0] = 'hello'//Cannot assign to '0' because it is a read-only property
+}
+
