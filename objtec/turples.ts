@@ -84,3 +84,16 @@ type BooleansStringNumber = [...boolean[], string, number];
 const a: StringNumberBooleans = ["hello", 1];
 const b: StringNumberBooleans = ["beautiful", 2, true];
 const c: StringNumberBooleans = ["world", 3, true, false, true, false, true]
+
+// Tuples types can be used in rest parameters and arguments, so that the following:
+
+function readButtonInput(...args: [string, number, ...boolean[]]) {
+  const [name, version, ...input] = args;
+  // ...
+}
+
+// is basically equivalent to:
+
+function readButtonInputB(name: string, version: number, ...input: boolean[]) {
+  // ...
+}
