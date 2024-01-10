@@ -108,3 +108,9 @@ function readOnlyTuple (arry: readonly [string, number]){
   // arry[0] = 'hello'//Cannot assign to '0' because it is a read-only property
 }
 
+// Tuples tend to be created and left un-modified in most code, 
+// so annotating types as readonly tuples when possible is a good default. This is also important given 
+// that array literals with const assertions will be inferred with readonly tuple types.
+
+let point = [3, 4] as const; //readonly tuple
+let pointB = [3, 4];
