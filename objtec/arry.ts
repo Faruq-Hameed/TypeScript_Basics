@@ -90,3 +90,12 @@ let y: string[] = [];
 x = y;
 // y = x; //error
 // The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'string[]'.
+
+let a: readonly string[] = ['c', 'd', 'e', 'f', 'g', 'h'];
+
+let b: Array<string> = ['a', 'b'];
+
+let c = [b, ...a]
+let d = [a, ...b];
+
+a[10] = 'a';
