@@ -115,6 +115,3 @@ function readOnlyTuple (arry: readonly [string, number]){
 let point = [3, 4] as const; //readonly tuple
 let pointB = [3, 4];
 
-function remove<ItemType>(itemToRemove: ItemType, array: Array<ItemType>): ItemType[] {
-  return array.filter(item => item !== itemToRemove);
-}
