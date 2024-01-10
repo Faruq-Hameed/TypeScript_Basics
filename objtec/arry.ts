@@ -98,4 +98,4 @@ let b: Array<string> = ['a', 'b'];
 let c = [b, ...a]
 let d = [a, ...b];
 
-a[10] = 'a';
+// a[10] = 'a';
