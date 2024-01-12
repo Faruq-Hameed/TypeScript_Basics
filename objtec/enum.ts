@@ -2,5 +2,3 @@
 // Enums allow you to define a collection of related values with meaningful names, 
 // making your code more readable and maintainable. 
 // Enums in TypeScript can be numeric or string-based.
-
-//we have Numeric enums
