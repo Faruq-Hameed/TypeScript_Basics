@@ -12,4 +12,12 @@ enum Direction{
     Right
 }
 
+// In this example, Direction is a numeric enum where Up is assigned the value 0, Down is assigned 1, and so on. 
+// You can also manually assign values to enum members:
 
+enum DirectionA{
+    Up = 1,
+    Down = 2,
+    Left   = 3,
+    Right = 4
+}
