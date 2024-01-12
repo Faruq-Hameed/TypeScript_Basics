@@ -10,3 +10,6 @@ function subtract(x: number = 10, y: number = 5): number {
     }
   }
 
+//   class CollectionA<T> {
+//     static type: T;
+//   }
