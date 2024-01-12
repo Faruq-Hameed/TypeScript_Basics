@@ -52,3 +52,4 @@ let directionNameA: string = DirectionA.Down; // "Up"
 // let directionValue: Direction = Direction["back"]; // 1 i.e assigned the value to directionValue
 
 console.log({directionName}, )
+
