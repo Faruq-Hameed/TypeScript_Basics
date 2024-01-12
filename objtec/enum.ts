@@ -53,9 +53,12 @@ let directionName: string = Direction[0]; // "Up"
 console.log({directionName}, )
 
 class Collection<T> {
-    items: {value: string} extends T[]? undefined
+    items: T[];
     find(keyword: string) : T {
-      return this.items.filter(el => el.value === keyword)[0];
+      return this.items.filter(el => el === keyword)[0];
     }
   }
 
+  class CollectionA<T> {
+    static type: T;
+  }
