@@ -52,13 +52,4 @@ let directionName: string = Direction[0]; // "Up"
 
 console.log({directionName}, )
 
-class Collection<T> {
-    items: T[];
-    find(keyword: string) : T {
-      return this.items.filter(el => el === keyword)[0];
-    }
-  }
 
-  class CollectionA<T> {
-    static type: T;
-  }
