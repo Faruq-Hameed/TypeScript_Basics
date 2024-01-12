@@ -43,3 +43,12 @@ enum Colors {
 let colors : Colors = Colors.RED
 
 console.log(colors) //
+
+// Enums in TypeScript offer both forward (enum value to name) and reverse (enum name to value) mappings. 
+// You can convert between them using the enum members:
+
+let directionName: string = Direction[0]; // "Up"
+let directionNameA: string = DirectionA.Down; // "Up"
+// let directionValue: Direction = Direction["back"]; // 1 i.e assigned the value to directionValue
+
+console.log({directionName}, )
