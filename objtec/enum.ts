@@ -21,3 +21,7 @@ enum DirectionA {
     Left = 3,
     Right = 4
 }
+
+let direction : Direction = Direction.Up
+
+console.log(direction) // 0
