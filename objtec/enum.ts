@@ -25,3 +25,21 @@ enum DirectionA {
 let direction : Direction = Direction.Up
 
 console.log(direction) // 0
+
+let directionA : DirectionA = DirectionA.Up
+
+console.log(typeof directionA) // 0
+
+
+// String-based enums allow you to use strings as values:
+
+enum Colors {
+    RED = 'red',
+    BLUE = 'blue',
+    YELLOW = 'yellow',
+    GREEN = 'green',
+}
+
+let colors : Colors = Colors.RED
+
+console.log(colors) //
