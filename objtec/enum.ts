@@ -48,8 +48,7 @@ console.log(colors) //
 // You can convert between them using the enum members:
 
 let directionName: string = Direction[0]; // "Up"
-let directionNameA: string = DirectionA.Down; // "Up"
-// let directionValue: Direction = Direction["back"]; // 1 i.e assigned the value to directionValue
+// let directionValue: Direction = Direction["back"]; e
 
 console.log({directionName}, )
 
