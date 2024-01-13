@@ -21,3 +21,10 @@ function identityA(arg: any) :any{
 // Instead, we need a way of capturing the type of the argument in s
 // uch a way that we can also use it to denote what is being returned. Here, we will use a type variable,
 //  a special kind of variable that works on types rather than values.
+
+//generic type
+
+function identityB <Type>(arg: Type): Type{
+    return arg
+}
+We say that this version of the identity function is generic, as it works over a range of types. Unlike using any, it’s also just as precise (i.e., it doesn’t lose any information) as the first identity function that used numbers for the argument and return type.
