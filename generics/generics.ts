@@ -74,5 +74,17 @@ function loggingIdentityC<Type>(arg: Array<Type>): Array<Type> {
 }
 
 // You can read the type of the loggingIdentities as “the generic function loggingIdentity takes a type parameter Type, 
-// and an argument arg which is an array of Types, and returns an array of Types
+// and an argument arg which is an array of Types, and returns an array of Types.
+
+
 //Generic Types
+
+The type of generic functions is just like those of non-generic functions, 
+with the type parameters listed first, similarly to function declarations:
+
+function identityFunc<Type>(arg: Type): Type{
+    return arg;
+
+}
+
+let myIdentity: <Type>(arg: Type) => Type = identityFunc;
