@@ -7,3 +7,7 @@
 // Conditional Types - Types which act like if statements in the type system
 // Mapped Types - Creating types by mapping each property in an existing type
 // Template Literal Types - Mapped types which change properties via template literal strings
+
+//calling the identity function
+
+let output = iden
