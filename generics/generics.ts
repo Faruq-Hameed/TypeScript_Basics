@@ -37,7 +37,8 @@ let output = identityB<string>('hello world'); //
 
 // The second way is also perhaps the most common. Here we use type argument inference — that is, 
 // we want the compiler to set the value of Type for us automatically based on the type of the argument we pass in:
-let outputB = identityB(9);
+let outputB = identityB("myString");
+
 
 console.log({output});
 
