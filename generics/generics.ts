@@ -46,10 +46,11 @@ let outputB = identityB("myString");
 
 // Working with Generic Type Variables
 
-What if we want to also log the length of the argument arg to the console with each call? We might be tempted to write this:
+// What if we want to also log the length of the argument arg to the console with each call? 
+We might be tempted to write this:
 
 function loggingIdentity<Type>(arg: Type): Type {
-  console.log(arg.length);
-/
+//   console.log(arg.length);//error: / Property 'length' does not exist on type 'Type'.
+
   return arg;
 }
