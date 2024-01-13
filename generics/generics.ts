@@ -138,22 +138,19 @@ let myIdentityFnB: GenericIdentityFnB<string> = genericIdentityB
 // A generic class has a similar shape to a generic interface. 
 // Generic classes have a generic type parameter list in angle brackets (<>) following the name of the class.
 
-class GenericNumber<NumType>{
-    zeroValue: NumType;
-    add: (x: NumType, y: NumType) => NumType;
-    constructor( zeroValue: NumType, add : (x: NumType, y: NumType) => NumType){
-        this.zeroValue = zeroValue
-        this.add = add
-    }
-}
+// class GenericNumber<NumType>{
+//     zeroValue: NumType;
+//     add: (x: NumType, y: NumType) => NumType;
+  
+// }
 
-let myGenericNumber = new GenericNumber<number>()
+// let myGenericNumber = new GenericNumber<number>()
 
-myGenericNumber.zeroValue = 0
-myGenericNumber.add = (x: number, y: number) => {
-    console.log(`adding ${x} to ${y} = `, x + y)
-    return x + y
-}
-myGenericNumber.add(8, 7)
+// myGenericNumber.zeroValue = 0
+// myGenericNumber.add = (x: number, y: number) => {
+//     console.log(`adding ${x} to ${y} = `, x + y)
+//     return x + y
+// }
+// myGenericNumber.add(8, 7)
 
 
