@@ -30,6 +30,11 @@ function identityB <Type>(arg: Type): Type{
 // We say that this version (identityB) of the identity function is generic, as it works over a range of types. 
 // Unlike using any, it’s also just as precise (i.e., it doesn’t lose any information) 
 // as the first identity function that used numbers for the argument and return type.
-let output = identityB(9);
+//calling the identity function. we can call it in one of two ways.
 
-console.log(output);
+let output = identityB<string>('hello world');
+let outputB = identityB(9);
+
+console.log({output});
+
+
