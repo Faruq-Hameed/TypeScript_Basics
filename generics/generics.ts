@@ -27,4 +27,6 @@ function identityA(arg: any) :any{
 function identityB <Type>(arg: Type): Type{
     return arg
 }
-We say that this version of the identity function is generic, as it works over a range of types. Unlike using any, it’s also just as precise (i.e., it doesn’t lose any information) as the first identity function that used numbers for the argument and return type.
+We say that this version of the identity function is generic, as it works over a range of types. 
+Unlike using any, it’s also just as precise (i.e., it doesn’t lose any information) 
+as the first identity function that used numbers for the argument and return type.
