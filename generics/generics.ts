@@ -79,8 +79,8 @@ function loggingIdentityC<Type>(arg: Array<Type>): Array<Type> {
 
 //Generic Types
 
-The type of generic functions is just like those of non-generic functions, 
-with the type parameters listed first, similarly to function declarations:
+// The type of generic functions is just like those of non-generic functions, 
+// with the type parameters listed first, similarly to function declarations:
 
 function identityFunc<Type>(arg: Type): Type{
     return arg;
@@ -88,3 +88,11 @@ function identityFunc<Type>(arg: Type): Type{
 }
 
 let myIdentity: <Type>(arg: Type) => Type = identityFunc;
+
+// We could also have used a different name for the generic type parameter in the type, 
+// so long as the number of type variables and how the type variables are used line up.
+
+function identityFuncB<input>(arg: input) : input {
+    return arg;
+
+}
