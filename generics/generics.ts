@@ -30,9 +30,13 @@ function identityB <Type>(arg: Type): Type{
 // We say that this version (identityB) of the identity function is generic, as it works over a range of types. 
 // Unlike using any, it’s also just as precise (i.e., it doesn’t lose any information) 
 // as the first identity function that used numbers for the argument and return type.
-//calling the identity function. we can call it in one of two ways.
+//calling the identity function. we can call it in one of two ways;
 
-let output = identityB<string>('hello world');
+//1) pass all of the arguments, including the type argument, to the function:
+let output = identityB<string>('hello world'); //
+
+// The second way is also perhaps the most common. Here we use type argument inference — that is, 
+// we want the compiler to set the value of Type for us automatically based on the type of the argument we pass in:
 let outputB = identityB(9);
 
 console.log({output});
