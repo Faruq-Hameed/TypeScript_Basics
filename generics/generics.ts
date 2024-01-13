@@ -8,4 +8,8 @@ function identity(arg: number) : number {
     return arg
 }
 // Without generics, we would either have to give the identity function above a specific type:
+// Or, we could describe the identity function using the any type:
+function identityA(arg: any) :any{
+    return arg
+}
 
