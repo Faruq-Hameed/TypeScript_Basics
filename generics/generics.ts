@@ -138,13 +138,13 @@ let myIdentityFnB: GenericIdentityFnB<string> = genericIdentityB
 // A generic class has a similar shape to a generic interface. 
 // Generic classes have a generic type parameter list in angle brackets (<>) following the name of the class.
 
-// class GenericNumber<NumType>{
-//     zeroValue: NumType;
-//     add: (x: NumType, y: NumType) => NumType;
+class GenericNumber<NumType>{
+    zeroValue: NumType;
+    add: (x: NumType, y: NumType) => NumType;
   
-// }
+}
 
-// let myGenericNumber = new GenericNumber<number>()
+let myGenericNumber = new GenericNumber<number>()
 
 // myGenericNumber.zeroValue = 0
 // myGenericNumber.add = (x: number, y: number) => {
@@ -153,9 +153,9 @@ let myIdentityFnB: GenericIdentityFnB<string> = genericIdentityB
 // }
 // myGenericNumber.add(8, 7)
 
-This is a pretty literal use of the GenericNumber class, 
-but you may have noticed that nothing is restricting it to only use the number type.
- We could have instead used string or even more complex objects.
+// This is a pretty literal use of the GenericNumber class, 
+// but you may have noticed that nothing is restricting it to only use the number type.
+//  We could have instead used string or even more complex objects.
 
 let stringNumeric = new GenericNumber<string>();
 stringNumeric.zeroValue = "";
@@ -165,3 +165,5 @@ stringNumeric.add = function (x, y) {
  
 console.log(stringNumeric.add(stringNumeric.zeroValue, "test"));
 
+// Just as with interface, putting the type parameter on the class itself 
+// lets us make sure all of the properties of the class are working with the same type.
