@@ -39,6 +39,10 @@ let output = identityB<string>('hello world'); //
 // we want the compiler to set the value of Type for us automatically based on the type of the argument we pass in:
 let outputB = identityB("myString");
 
+While type argument inference can be a helpful tool to keep code shorter and more readable, 
+you may need to explicitly pass in the type arguments as we did in the previous example 
+when the compiler fails to infer the type, as may happen in more complex examples.
+
 
 console.log({output});
 
