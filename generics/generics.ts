@@ -25,8 +25,11 @@ function identityA(arg: any) :any{
 //generic type
 
 function identityB <Type>(arg: Type): Type{
-    return arg
+    return arg 
 }
 // We say that this version (identityB) of the identity function is generic, as it works over a range of types. 
 // Unlike using any, it’s also just as precise (i.e., it doesn’t lose any information) 
 // as the first identity function that used numbers for the argument and return type.
+let output = identityB(9);
+
+console.log(output);
