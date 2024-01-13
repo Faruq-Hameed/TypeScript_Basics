@@ -117,5 +117,21 @@ function genericIdentity<Type>(arg: Type) : Type{
 }
 
 let myIdentityFn: GenericIdentityFn = genericIdentity
-In a similar example, we may want to move the generic parameter to be a parameter of the whole interface. This lets us see what type(s) we’re generic over (e.g. Dictionary<string> rather than just Dictionary). 
-This makes the type parameter visible to all the other members of the interface.
+
+// In a similar example, we may want to move the generic parameter to be a parameter of the whole interface. 
+// This lets us see what type(s) we’re generic over (e.g. Dictionary<string> rather than just Dictionary). 
+// This makes the type parameter visible to all the other members of the interface.
+
+interface GenericIdentityFnB<Type>{
+    (arg: Type) : Type;
+}
+
+function genericIdentityB<Type>(arg: Type) : Type{
+    return arg;
+}
+let myIdentityFnB: GenericIdentityFnB<string> = genericIdentityB
+
+// In addition to generic interfaces, we can also create generic classes. 
+// Note that it is not possible to create generic enums and namespaces.
+
+// Generic Classes
