@@ -44,6 +44,6 @@ let outputB = identityB("myString");
 // when the compiler fails to infer the type, as may happen in more complex examples.
 
 
-console.log({output});
+// Working with Generic Type Variables
 
 
