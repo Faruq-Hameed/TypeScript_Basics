@@ -105,3 +105,17 @@ function identityFuncD<Type>(arg: Type): Type {
   }
 
 const myIdentityD: {<Type> (arg: Type) : Type} = identityFuncD
+
+//writing generic interface
+
+interface GenericIdentityFn {
+    <Type>(arg: Type): Type;
+}
+
+function genericIdentity<Type>(arg: Type) : Type{
+    return arg;
+}
+
+let myIdentityFn: GenericIdentityFn = genericIdentity
+In a similar example, we may want to move the generic parameter to be a parameter of the whole interface. This lets us see what type(s) we’re generic over (e.g. Dictionary<string> rather than just Dictionary). 
+This makes the type parameter visible to all the other members of the interface.
