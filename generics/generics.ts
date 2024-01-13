@@ -72,3 +72,7 @@ function loggingIdentityC<Type>(arg: Array<Type>): Array<Type> {
     console.log(arg.length); // Array has a .length, so no more error
     return arg;
 }
+
+// You can read the type of the loggingIdentities as “the generic function loggingIdentity takes a type parameter Type, 
+// and an argument arg which is an array of Types, and returns an array of Types
+//Generic Types
