@@ -94,5 +94,14 @@ let myIdentity: <Type>(arg: Type) => Type = identityFunc;
 
 function identityFuncB<input>(arg: input) : input {
     return arg;
-
 }
+
+let myIdentityB: <input>(arg: input) => input = identityFuncB
+
+//We can also write the generic type as a call signature of an object literal type:
+
+function identityFuncD<Type>(arg: Type): Type {
+    return arg;
+  }
+
+const myIdentityD: {<Type> (arg: Type) : Type} = identityFuncD
