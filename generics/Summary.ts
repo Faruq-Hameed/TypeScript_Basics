@@ -1,4 +1,4 @@
-/ By combining various type operators, we can express complex operations and values in a succinct, maintainable way. In this section we’ll cover ways to express a new type in terms of an existing type or value.
+// By combining various type operators, we can express complex operations and values in a succinct, maintainable way. In this section we’ll cover ways to express a new type in terms of an existing type or value.
 
 // Generics - Types which take parameters
 // Keyof Type Operator - Using the keyof operator to create new types
