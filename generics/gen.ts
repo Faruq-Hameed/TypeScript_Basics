@@ -35,3 +35,22 @@ getProperty(x, "a");
 
 //Generic Parameter Defaults
 
+// In TypeScript, you can provide default values for generic type parameters 
+// using the = defaultType syntax. This allows you to specify 
+// a default type that will be used when the generic type parameter is not explicitly provided.
+
+class GenericNumber<NumType = number> {
+  zeroValue: NumType;
+  add: (x: NumType, y: NumType) => NumType;
+
+  constructor(zeroValue: NumType, add: (x: NumType, y: NumType) => NumType) {
+      this.zeroValue = zeroValue;
+      this.add = add;
+  }
+}
+
+// Example usage with default type number
+const numberInstance = new GenericNumber(0, (x, y) => x + y);
+
+// Example usage with a different type (string)
+const stringInstance = new GenericNumber<string>("zero", (x, y) => x + y);
