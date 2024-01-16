@@ -5,9 +5,6 @@
 // Typeof Type Operator - Using the typeof operator to create new types
 // Indexed Access Types - Using Type['a'] syntax to access a subset of a type
 // Conditional Types - Types which act like if statements in the type system
-
-
-zz
 // Mapped Types - Creating types by mapping each property in an existing type
 // Template Literal Types - Mapped types which change properties via template literal strings
 
