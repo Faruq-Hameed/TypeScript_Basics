@@ -54,3 +54,7 @@ const numberInstance = new GenericNumber(0, (x, y) => x + y);
 
 // Example usage with a different type (string)
 const stringInstance = new GenericNumber<string>("zero", (x, y) => x + y);
+
+In this example, NumType is the generic type parameter, and its default value is set to number. This means 
+that if you create an instance of GenericNumber without explicitly specifying the generic type, 
+it will default to using number. However, one can still provide a different type explicitly when needed.
