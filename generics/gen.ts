@@ -50,7 +50,7 @@ class GenericNumber<NumType = number> {
 }
 
 // Example usage with default type number
-const numberInstance = new GenericNumber({i: 9}, (x, y) => x + y);
+const numberInstance = new GenericNumber(0, (x, y) => x + y);
 
 // Example usage with a different type (string)
 const stringInstance = new GenericNumber<string>("zero", (x, y) => x + y);
