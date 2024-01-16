@@ -35,13 +35,3 @@ getProperty(x, "a");
 
 //Generic Parameter Defaults
 
-interface Greet<T = string> {
-  greet: (x: T) => string;
-  age: number | T; 
-  name: string
-}
-
-let greetFunc: Greet = {
-  age: "9"
-}
-greetFunc.greet('Hello')
