@@ -28,7 +28,6 @@
 
 
 
-
 // Mapped Types - Creating types by mapping each property in an existing type
 // Template Literal Types - Mapped types which change properties via template literal strings
 
