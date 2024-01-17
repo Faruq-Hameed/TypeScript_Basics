@@ -60,3 +60,29 @@ const stringInstance = new GenericNumber<string>("zero", (x, y) => x + y);
 // it will default to using number. However, one can still provide a different type explicitly when needed.
 
 //The keyof type operator
+
+type Person = {
+  name: string;
+  age: number;
+  address: string;
+};
+
+function getPropertyA<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+const person: Person = {
+  name: "John",
+  age: 25,
+  address: "123 Main St",
+};
+
+const personA = {
+  name: "John",
+  address: "123 Main St",
+};
+
+const personName: string = getPropertyA(person, "name"); // Type-safe access
+const personAge: number = getPropertyA(person, "age"); // Type-safe access
+const personAgeA: number = getPropertyA(personA, "age"); // Type-safe access
+const invalidProperty = getPropertyA(person, "invalidKey"); // Error: "invalidKey" is not assignable to parameter of type "name" | "age" | "address"
