@@ -77,12 +77,8 @@ const person: Person = {
   address: "123 Main St",
 };
 
-const personA = {
-  name: "John",
-  address: "123 Main St",
-};
+
 
 const personName: string = getPropertyA(person, "name"); // Type-safe access
 const personAge: number = getPropertyA(person, "age"); // Type-safe access
-const personAgeA: number = getPropertyA(personA, "age"); // Type-safe access
 const invalidProperty = getPropertyA(person, "invalidKey"); // Error: "invalidKey" is not assignable to parameter of type "name" | "age" | "address"
