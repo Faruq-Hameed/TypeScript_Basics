@@ -103,3 +103,4 @@ function callKing(k: King, x: number): void {
   let child : King = {age : x >= 0 ? x.toString() : 'hello'};
   child.age = k.kingdom
 }
+
