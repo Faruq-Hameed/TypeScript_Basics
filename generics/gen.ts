@@ -92,3 +92,14 @@ type Point = { x: number; y: number };
 
 type P = keyof Point;
 
+interface King extends Person {
+ kingdom: string;
+}
+
+function callKing(k: King): void {
+  interface King {
+    age: string;
+  }
+  let child : King = {}age;
+  child.age = k.kingdom
+}
