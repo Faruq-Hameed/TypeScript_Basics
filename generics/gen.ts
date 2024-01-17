@@ -77,10 +77,7 @@ const person: Person = {
   address: "123 Main St",
 };
 
-type TypeName<T> = T extends number ? "string" : "non-string";
 
-let stringResult: TypeName<string> = "string";       // "string"
-let nonStringResult: TypeName<number> = 9; // "non-string"
 
 
 const personName: string = getPropertyA(person, "name"); // Type-safe access
