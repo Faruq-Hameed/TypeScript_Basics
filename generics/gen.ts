@@ -96,10 +96,10 @@ interface King extends Person {
  kingdom: string;
 }
 
-function callKing(k: King): void {
+function callKing(k: King, x: number): void {
   interface King {
     age: string;
   }
-  let child : King = {}age;
+  let child : King = {age : x >= 0 ? x.toString() : 'hello'};
   child.age = k.kingdom
 }
