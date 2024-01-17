@@ -77,8 +77,12 @@ const person: Person = {
   address: "123 Main St",
 };
 
+type TypeName<T> = T extends number ? "string" : "non-string";
+
+let stringResult: TypeName<string> = "string";       // "string"
+let nonStringResult: TypeName<number> = 9; // "non-string"
 
 
 const personName: string = getPropertyA(person, "name"); // Type-safe access
 const personAge: number = getPropertyA(person, "age"); // Type-safe access
-const invalidProperty = getPropertyA(person, "invalidKey"); // Error: "invalidKey" is not assignable to parameter of type "name" | "age" | "address"
+// const invalidProperty = getPropertyA(person, "invalidKey"); // Error: "invalidKey" is not assignable to parameter of type "name" | "age" | "address"
