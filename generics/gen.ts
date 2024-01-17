@@ -83,3 +83,12 @@ const person: Person = {
 const personName: string = getPropertyA(person, "name"); // Type-safe access
 const personAge: number = getPropertyA(person, "age"); // Type-safe access
 // const invalidProperty = getPropertyA(person, "invalidKey"); // Error: "invalidKey" is not assignable to parameter of type "name" | "age" | "address"
+
+//The keyof operator takes an object type and produces a string 
+// or numeric literal union of its keys. 
+// The following type P is the same type as type P = "x" | "y":
+
+type Point = { x: number; y: number };
+
+type P = keyof Point;
+
