@@ -104,6 +104,14 @@ function callKing(k: King, x: number): void {
   child.age = k.kingdom
 }
 
-//The 
-typeof
-type operator
+//The typeof type operator
+
+// JavaScript already has a typeof operator you can use in an expression context:
+// Prints "string"
+console.log(typeof "Hello world");
+function func (){
+  
+}
+console.log(typeof func);
+TypeScript adds a typeof operator you can use in a type context to refer to the type of a variable or property:
+
