@@ -126,4 +126,12 @@ console.log(typeof s); //string
 // combined with other type operators, you can use typeof to conveniently express many patterns.
 
 type Predicate = (x: unknown) => boolean
-type K = ReturnType<Predicate>
+type K = ReturnType<Predicate> //type K = boolean
+
+// If we try to use ReturnType on a function name, we see an instructive error:
+
+function f (){
+  return {x: 10, y: 6}
+}
+
+type K2 = ReturnType<f> //error: 'f' refers to a value, but is being used as a type here. Did you mean 'typeof f'?
