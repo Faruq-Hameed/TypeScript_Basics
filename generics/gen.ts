@@ -104,4 +104,6 @@ function callKing(k: King, x: number): void {
   child.age = k.kingdom
 }
 
-let arr = [string, number]
+//The 
+typeof
+type operator
