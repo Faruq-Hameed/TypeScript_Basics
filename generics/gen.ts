@@ -118,4 +118,5 @@ console.log(typeof func);
 
 let s = 'shoe'
 let age = new Date()
-console.log(typeof age);
+console.log(typeof age); //object
+console.log(typeof s); //string
