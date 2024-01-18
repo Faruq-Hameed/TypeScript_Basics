@@ -159,6 +159,3 @@ type P2 = ReturnType<typeof f>;
 
 
 
-
-
-
