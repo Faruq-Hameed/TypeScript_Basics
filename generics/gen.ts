@@ -134,4 +134,27 @@ function f (){
   return {x: 10, y: 6}
 }
 
-type K2 = ReturnType<f> //error: 'f' refers to a value, but is being used as a type here. Did you mean 'typeof f'?
+// type K2 = ReturnType<f> //error: 'f' refers to a value, but is being used as a type here. Did you mean 'typeof f'?
+
+// Remember that values and types aren’t the same thing as f is seen as value above instead of it return type. 
+// To refer to the type that the value f has, we use typeof:
+
+type K2 = ReturnType<typeof f> //error: 'f' refers to a value, but is being used as a type here. Did you mean 'typeof f'?
+
+function f2() {
+  return { x: 10, y: 3 };
+}
+type P2 = ReturnType<typeof f>;
+    
+//Limitations of typeof
+
+// TypeScript intentionally limits the sorts of expressions you can use typeof on.
+
+// Specifically, it’s only legal to use typeof on identifiers (i.e. variable names) or their properties. 
+// This helps avoid the confusing trap of writing code you think is executing, but isn’t:
+
+// // Meant to use = ReturnType<typeof msgbox>
+// let shouldContinue: typeof msgbox("Are you sure you want to continue?");
+
+
+
