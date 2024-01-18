@@ -117,6 +117,13 @@ console.log(typeof func);
 // TypeScript adds a typeof operator you can use in a type context to refer to the type of a variable or property:
 
 let s = 'shoe'
+let n: typeof s; //let n: string
+
 let age = new Date()
 console.log(typeof age); //object
 console.log(typeof s); //string
+
+// combined with other type operators, you can use typeof to conveniently express many patterns.
+
+type Predicate = (x: unknown) => boolean
+type K = ReturnType<Predicate>
