@@ -17,5 +17,9 @@ export function multiple(x: number, y: number): number {
 
 function log(message: string): void 
 
+import { multiple } from "./script";
+
+console.log('Value of x*y is:', multiple(6, 2));
+
     console.log("Numbers", message);
 }
