@@ -15,7 +15,7 @@ export function multiple(x: number, y: number): number {
     return x + y;
 }
 
-function log(message: string): void {
+function log(message: string): void 
 
     console.log("Numbers", message);
 }
