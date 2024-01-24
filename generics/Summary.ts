@@ -8,3 +8,14 @@
 // Mapped Types - Creating types by mapping each property in an existing type
 // Template Literal Types - Mapped types which change properties via template literal strings
 
+export function multiple(x: number, y: number): number {
+
+    log(`${x} * ${y}`);
+
+    return x + y;
+}
+
+function log(message: string): void {
+
+    console.log("Numbers", message);
+}
