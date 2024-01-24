@@ -23,3 +23,23 @@ console.log('Value of x*y is:', multiple(6, 2));
 
     console.log("Numbers", message);
 }
+export class Student {
+
+    stuCode: number;
+
+    stuName: string;
+
+    constructor(name: string, code: number) {
+
+        this.stuName = name;
+
+        this.stuCode = code;
+
+    }
+
+    displayStudent() {
+
+        console.log("Student Code: " + this.stuCode 
+
+            + ", Student Name: " + this.stuName);
+
