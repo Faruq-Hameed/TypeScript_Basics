@@ -19,3 +19,15 @@ type ID = Person[ 'age' | 'name'] //using union type
 
 let faruqId : ID = faruq.age < 20 ? 'twenty plus' : faruq.age
 console.log(typeof faruqId)
+
+type AgeC = typeof faruq.age //type AgeC = number; using typeof
+type AgeD = 7
+// let num : AgeD = 9 //error code; type '9' is not assignable to type '7'.t
+
+type IDB = Person[keyof Person]; //using keyof ; type IDB = string | number | boolean
+
+// let idB : IDB = {} //error code; Type '{}' is not assignable to type 'IDB'
+
+let idB : IDB =  "hello"  //can be a string
+let idC : IDB =  9  //can be a number
+let idD : IDB =  false  //can be a boolean
