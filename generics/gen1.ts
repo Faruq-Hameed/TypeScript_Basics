@@ -44,4 +44,15 @@ type Copy = Person[AliveOrName] // this is so because property alive or name are
 // Another example of indexing with an arbitrary type is using number to get the type of an array’s elements. 
 // We can combine this with typeof to conveniently capture the element type of an array literal:
 
-const myArray = [ {name: "faruq", age: 28}, {name: "abike", age: 27}, {name: "tobi", age: 26}]
+const MyArray = [
+    { name: "faruq", age: 28 },
+    { name: "abike", age: 27 },
+]
+
+type PersonA = typeof MyArray[number]
+
+let personB: PersonA = { name: 'hello', age: 28,}
+type PersonA = {
+    name: string;
+    age: number;
+}
