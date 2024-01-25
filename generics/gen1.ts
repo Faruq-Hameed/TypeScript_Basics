@@ -31,3 +31,17 @@ type IDB = Person[keyof Person]; //using keyof ; type IDB = string | number | bo
 let idB : IDB =  "hello"  //can be a string
 let idC : IDB =  9  //can be a number
 let idD : IDB =  false  //can be a boolean
+
+type AliveOrName = "alive" | "name"
+
+type Copy = Person[AliveOrName] // this is so because property alive or name are available in Person
+// type Copy = string | boolean
+
+// You’ll even see an error if you try to index a property that doesn’t exist:
+// type I1 = Person["alve"];
+// Property 'alve' does not exist on type 'Person'.
+
+// Another example of indexing with an arbitrary type is using number to get the type of an array’s elements. 
+// We can combine this with typeof to conveniently capture the element type of an array literal:
+
+const myArray = [ {name: "faruq", age: 28}, {name: "abike", age: 27}, {name: "tobi", age: 26}]
