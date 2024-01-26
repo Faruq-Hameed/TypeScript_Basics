@@ -111,3 +111,7 @@ type Example2 = RegExp extends Animal ? number : string // type Example2 = strin
 interface IdLabel{
     id: number /* some fields */;
 }
+
+interface NameLabel{
+    name: string /* some fields */;
+}
