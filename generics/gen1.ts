@@ -86,6 +86,5 @@ interface Dog extends Animal {
     wool(): void
 }
 
-let dog: Dog;
-dog.live = void;
+function alive () : void {};
 
