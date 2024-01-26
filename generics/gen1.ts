@@ -94,3 +94,6 @@ type Example1 = Dog extends Animal ? number : string; //type Example1 = number
 
 type Example2 = RegExp extends Animal ? number : string // type Example2 = string
 
+// Conditional types take a form that looks a little like conditional expressions 
+// (condition ? trueExpression : falseExpression) in JavaScript:
+// SomeType extends OtherType ? TrueType : FalseType;
