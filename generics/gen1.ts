@@ -103,5 +103,11 @@ type Example2 = RegExp extends Animal ? number : string // type Example2 = strin
 // then you’ll get the type in the first branch (the “true” branch); 
 // otherwise you’ll get the type in the latter branch (the “false” branch).
 
-From the examples above, conditional types might not immediately seem useful - we can tell ourselves whether or not Dog extends Animal and pick number or string! 
-But the power of conditional types comes from using them with generics.
+// From the examples above, conditional types might not immediately seem useful 
+// - we can tell ourselves whether or not Dog extends Animal and pick number or string! 
+// But the power of conditional types comes from using them with generics.
+
+// 
+interface IdLabel{
+    id: number /* some fields */;
+}
