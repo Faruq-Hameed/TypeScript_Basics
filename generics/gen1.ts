@@ -91,3 +91,5 @@ function alive () : void {
 };
 
 let dog: Dog;
+
+dog.live = alive()
