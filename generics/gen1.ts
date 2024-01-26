@@ -81,3 +81,10 @@ type AgeG = Person[KeyB] //type AgeG = number
 interface Animal {
     live () : void;
 }
+
+interface Dog extends Animal {
+    wool(): void
+}
+
+let dog: Dog;
+dog.live = void;
