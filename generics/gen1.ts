@@ -141,13 +141,10 @@ function createLabelD<T extends number | string>(idOrName: T): NameOrId<T> {
     throw "unimplemented";
   }
    
-  let a = createLabelD("typescript");
-     
-  let a: NameLabel
+  let a = createLabelD("typescript");//   let a: NameLabel
    
   let b = createLabelD(2.8);
-     
-  let b: IdLabel
+     console.log(b)
    
   let c = createLabelD(Math.random() ? "hello" : 42);
   let c: NameLabel | IdLabel
