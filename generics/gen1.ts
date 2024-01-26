@@ -122,3 +122,11 @@ function createLabel(nameOrId: string | number): NameLabel | IdLabel;
 function createLabel(nameOrId: string | number): NameLabel | IdLabel {
 throw "unimplemented"
 }
+
+These overloads for createLabel describe a single JavaScript function that 
+makes a choice based on the types of its inputs. Note a few things:
+If a library has to make the same sort of choice over and over throughout its API, 
+this becomes cumbersome. We have to create three overloads: 
+one for each case when we’re sure of the type (one for string and one for number),
+and one for the most general case (taking a string | number). 
+For every new type createLabel can handle, the number of overloads grows exponentially.
