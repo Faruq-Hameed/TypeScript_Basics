@@ -86,5 +86,7 @@ interface Dog extends Animal {
     wool(): void
 }
 
-function alive () : void {};
+function alive () : void {
+    console.log('i am alive')
+};
 
