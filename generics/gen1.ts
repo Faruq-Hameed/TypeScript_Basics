@@ -115,3 +115,10 @@ interface IdLabel{
 interface NameLabel{
     name: string /* some fields */;
 }
+
+function createLabel(id: number): IdLabel;
+function createLabel(name: string): NameLabel;
+function createLabel(nameOrId: string | number): NameLabel | IdLabel;
+function createLabel(nameOrId: string | number): NameLabel | IdLabel {
+throw "unimplemented"
+}
