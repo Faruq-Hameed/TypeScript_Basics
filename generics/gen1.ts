@@ -98,3 +98,5 @@ type Example2 = RegExp extends Animal ? number : string // type Example2 = strin
 // Conditional types take a form that looks a little like conditional expressions 
 // (condition ? trueExpression : falseExpression) in JavaScript:
 // SomeType extends OtherType ? TrueType : FalseType;
+
+When the type on the left of the extends is assignable to the one on the right, then you’ll get the type in the first branch (the “true” branch); otherwise you’ll get the type in the latter branch (the “false” branch).
