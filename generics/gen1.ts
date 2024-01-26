@@ -69,5 +69,5 @@ type KeyB = "age"
 
 type AgeG = Person[KeyB] //type AgeG = number
 
-
+//Conditional Types
 
