@@ -88,3 +88,4 @@ interface Dog extends Animal {
 
 let dog: Dog;
 dog.live = void;
+
