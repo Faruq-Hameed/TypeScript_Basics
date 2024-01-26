@@ -90,6 +90,4 @@ function alive () : void {
     console.log('i am alive')
 };
 
-let dog: Dog;
-
-dog.live = alive()
+type Example1 = Dog extends Animal ? number :
