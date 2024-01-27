@@ -10,13 +10,13 @@ interface Person {
 
 type Age = Person['age']
 // type AgeA = Person[0] //error code, i cannot access the properties by there index like an array
-type AgeB = Person['age'] //error code, only a single property can be accessed
+// type AgeB = Person['age' ,'name'] //error code, only a single property can be accessed
 
 const faruq: Person = {
     age: 9, name: 'faruq', alive: true
 }
 
-const faruqAge : Age = undefined | faruq.age 
+const faruqAge : Age = faruq.age 
 
 // The indexing type is itself a type, so we can use unions, keyof, or other types entirely:
 
@@ -27,7 +27,7 @@ console.log(typeof faruqId)
 
 type AgeC = typeof faruq.age //type AgeC = number; using typeof
 type AgeD = 7
-// let num : AgeD = 9 //error code; type '9' is not assignable to type '7'.t
+let num : AgeD = 9 //error code; type '9' is not assignable to type '7'.t
 
 type IDB = Person[keyof Person]; //using keyof ; type IDB = string | number | boolean
 
