@@ -3,8 +3,10 @@
 
 // type Person = {age: number, name: string, alive: boolean}
 
-interface Person extends number{
-
+interface Person{
+age: number,
+name: string
+alive: boolean
 }
 
 
