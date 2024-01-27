@@ -1,7 +1,11 @@
 // Indexed Access Types
 // We can use an indexed access type to look up a specific property on another type:
 
-type Person = {age: number, name: string, alive: boolean}
+// type Person = {age: number, name: string, alive: boolean}
+
+interface Person extends number{
+
+}
 
 
 type Age = Person['age']
