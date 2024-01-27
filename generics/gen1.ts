@@ -27,7 +27,7 @@ console.log(typeof faruqId)
 
 type AgeC = typeof faruq.age //type AgeC = number; using typeof
 type AgeD = 7
-let num : AgeD = 9 //error code; type '9' is not assignable to type '7'.t
+// let num : AgeD = 9 //error code; type '9' is not assignable to type '7'.t
 
 type IDB = Person[keyof Person]; //using keyof ; type IDB = string | number | boolean
 
@@ -138,7 +138,7 @@ throw "unimplemented"
 
 // Instead, we can encode that logic in a conditional type:
 
-type IdOrName<T extends number | string> = T extends number? IdLabel : NameLabel
+type NameOrId<T extends number | string> = T extends number? IdLabel : NameLabel
 
 // We can then use that conditional type to simplify our overloads down to a single function with no overloads.
 
