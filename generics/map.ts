@@ -5,3 +5,6 @@ type Properties = 'propA' | 'propB';
 // type M
 
 
+
+
+
