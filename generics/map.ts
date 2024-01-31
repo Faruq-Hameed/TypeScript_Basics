@@ -8,3 +8,5 @@ type Properties = 'propA' | 'propB';
 
 
 
+
+
