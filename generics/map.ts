@@ -24,9 +24,18 @@ type MyMappedTypeB = {
 let personB : MyMappedTypeB = {propA: 'propA', propB: "propB"};// error code expecting "propA" & "propB" as values
 console.log(personB);
 
-// type M
 
+type MappedTypeC <Properties extends string | number | symbol> = {
+    [P in Properties] : P;
+}
 
+type MyNewType = MappedTypeC<'propA' | 'propB'>
+
+type MappedT<T> = {
+    [P in keyof T] : T[P]
+}
+
+type MappedNew = MappedT<Properties>
 
 
 
