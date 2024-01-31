@@ -9,6 +9,20 @@
 // a new object with the same keys but with new types.
 
 type Properties = 'propA' | 'propB';
+type MyMappedType = {
+    [P in Properties] : boolean; //i can assign the value type of boolean or any other type
+}
+let person : MyMappedType = {propA: true, propB: false};
+
+console.log(person);
+
+type MyMappedTypeB = {
+    [P in Properties] : P; //assigning values "propA" & "propB"
+}
+// let personB : MyMappedTypeB = {propA: 'true', propB: false};// error code expecting "propA" & "propB" as values
+
+let personB : MyMappedTypeB = {propA: 'propA', propB: "propB"};// error code expecting "propA" & "propB" as values
+console.log(personB);
 
 // type M
 
