@@ -25,8 +25,8 @@ let personB : MyMappedTypeB = {propA: 'propA', propB: "propB"};// error code exp
 console.log(personB);
 
 
-type MappedTypeC <Property extends string | number | symbol> = {
-    [P in Property] : P;
+type MappedTypeC <Properties extends string | number | symbol> = {
+    [P in Properties] : P;
 }
 
 type MyNewType = MappedTypeC<'propAD' | 'propB'>
