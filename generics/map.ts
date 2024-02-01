@@ -50,7 +50,33 @@ type Pick1<T, Properties extends keyof T> ={
 type MyNewType2 = Pick1<{a: 'apple', b: 'b'}, 'a'> // Pick only a
 //we picked only property a for the type above
 
-let fruit: MyNewType2 = 'apple';
+let fruit: MyNewType2 = {a: 'apple'};
+
+
+type MyNewType3 = Pick1<{a: 'apple', b: string}, 'b'> // Pick only b property only
+
+let fruitB: MyNewType3 = {b: 'apple'};
+// Accessing and updating 'b' property of 'fruitB' is allowed
+
+fruitB.b = 'mango';
+
+console.log(fruitB);
+
+
+//we can take (pick) two or more properties using the union
+
+type MyNewType4 = Pick1<{a: 'apple', b: string}, 'a' | 'b'> // Pick two properties 'a' and 'b'
+
+let fruitD : MyNewType4 = {
+    a: 'apple', //not changeable
+    b: 'banana' //can be changed
+}
+
+fruitD.b = 'berry'
+// fruitD.a = 'berry'//error code
+
+
+
 
 
 
