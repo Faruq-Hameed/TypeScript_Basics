@@ -62,3 +62,17 @@ let unlockedAcct: UnlockedAccount = { //this is mutable because we have removed 
     name: "Faruq"
 }
 unlockedAcct.id = 7
+
+type LockedAccount2 = {
+    readonly id: number,
+    name: string
+}
+
+type UnlockedAccount2 = CreateMutable<LockedAccount> //all the immutable properties(if any) now mutable 
+
+let unlock2 : UnlockedAccount2 = {
+    id: 9,
+    name: "unlocked"
+}
+
+unlock2.id = 91
