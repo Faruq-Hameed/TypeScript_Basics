@@ -175,3 +175,11 @@ type LazyPerson = Getters<PersonB> //
 //     getAge: () => number;
 //     getLocation: () => string;
 // }
+
+
+//You can filter out keys by producing never via a conditional type:
+// Remove the 'kind' property
+
+type RemoveKindKey<T> = {
+    [P in keyof T as Exclude<P, 'kind'>]: T[P]
+}
