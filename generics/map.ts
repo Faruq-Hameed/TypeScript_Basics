@@ -30,7 +30,7 @@ type MappedTypeC <Properties extends string | number | symbol> = {
 }
 
 type MyNewType = MappedTypeC<'propA' | 'propB'>
-
+jhjfh
 let obj : MyNewType = {
     propA :"propA",
     propB: "propB"
