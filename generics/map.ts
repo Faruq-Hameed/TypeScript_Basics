@@ -41,6 +41,9 @@ type MappedT<T> = {
 }
 type MyNewTypeD = MappedT<{a: 'a', b: 'b'}>
 
+
+//PICK in typescript
+
 //we can be selecting(picking) properties form list of properties in a type list
 type Pick1<T, Properties extends keyof T> ={
     [P in Properties] : T[P]
@@ -75,6 +78,12 @@ let fruitD : MyNewType4 = {
 fruitD.b = 'berry'
 // fruitD.a = 'berry'//error code
 
+//key of any result to string | number | symbol in typescript
+
+
+// When you don’t want to repeat yourself, sometimes a type needs to be based on another type.
+// Mapped types build on the syntax for index signatures, 
+// which are used to declare the types of properties which have not been declared ahead of time:
 
 
 
