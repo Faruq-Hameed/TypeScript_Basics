@@ -29,6 +29,17 @@ type FeatureOptions = OptionsFlags<OptionsFunc>; //using the same type but with 
 
 // let option2: FeatureOptions = {darkMode: dark, newUser: user}; //error code
 
-let option2: FeatureOptions = {darkMode: true, newUser: false}; //before the change
+let option2: FeatureOptions = {darkMode: true, newUser: false}; //updated properties types
 
 
+// Mapping Modifiers
+// There are two additional modifiers which can be applied during mapping: 
+// readonly and ? which affect mutability and optionality respectively.
+
+// You can remove or add these modifiers by prefixing with - or +. If you don’t add a prefix, then + is assumed.
+
+// Removes 'readonly' attributes from a type's properties
+
+type CreateMutable<Type> ={
+    -readonly [Propert in keyof Typroperte]: Type[P]
+}
