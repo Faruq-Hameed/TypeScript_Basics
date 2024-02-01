@@ -39,7 +39,26 @@ let option2: FeatureOptions = {darkMode: true, newUser: false}; //updated proper
 // You can remove or add these modifiers by prefixing with - or +. If you don’t add a prefix, then + is assumed.
 
 // Removes 'readonly' attributes from a type's properties
-
 type CreateMutable<Type> ={
-    -readonly [Propert in keyof Typroperte]: Type[P]
+    -readonly [Property in keyof Type ]: Type[Property] //remove readonly properties from a type
 }
+
+type LockedAccount = {
+    readonly id: number,
+    readonly name: string
+}
+
+let lockedAcct: LockedAccount = {
+    id: 6,
+    name: "Faruq"
+}
+
+// lockedAcct.id = 7 //Cannot assign to 'id' because it is a read-only property.ts(2540)
+
+type UnlockedAccount = CreateMutable<LockedAccount> //all the immutable properties now mutable 
+
+let unlockedAcct: UnlockedAccount = { //this is mutable because we have removed the read-only property
+    id: 6,
+    name: "Faruq"
+}
+unlockedAcct.id = 7
