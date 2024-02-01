@@ -17,7 +17,7 @@ let person : MyMappedType = {propA: true, propB: false};
 console.log(person);
 
 type MyMappedTypeB = {
-    [P in Properties] : P; //assigning values "propA" & "propB"
+    [P in Properties] : P; //assigning values "propA" & "propB" to the prop
 }
 // let personB : MyMappedTypeB = {propA: 'true', propB: false};// error code expecting "propA" & "propB" as values
 
@@ -25,11 +25,15 @@ let personB : MyMappedTypeB = {propA: 'propA', propB: "propB"};// error code exp
 console.log(personB);
 
 
-type MappedTypeC <Properties extends string | number | symbol> = {
-    [P in Properties] : P;
+type MappedTypeC <Property extends string | number | symbol> = {
+    [P in Property] : P;
 }
 
-type MyNewType = MappedTypeC<'propA' | 'propB'>
+type MyNewType = MappedTypeC<'propAD' | 'propB'>
+
+let obj : MyNewType = {
+    propAD: "propB"
+}
 
 type MappedT<T> = {
     [P in keyof T] : T[P]
