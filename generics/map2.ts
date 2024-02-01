@@ -128,3 +128,12 @@ type OptionalType<T> = {
 type OptionalPerson = OptionalType<Person>; //all properties are optional
 
 let bola : OptionalPerson = {age: 7} //all properties are optional
+
+
+// Key Remapping via as
+
+// In TypeScript 4.1 and onwards, you can re-map keys in mapped types with an as clause in a mapped type:
+
+type MappedTypeWithNewProperties<Type> = {
+    [Prop in keyof Type as NewKeyType]: Type[Prop]
+}
