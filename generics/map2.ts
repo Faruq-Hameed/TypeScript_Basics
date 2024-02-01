@@ -76,3 +76,19 @@ let unlock2 : UnlockedAccount2 = {
 }
 
 unlock2.id = 91
+
+//creating immutable types
+type CreateImmutableAccount<Type> = {
+    +readonly [Prop in keyof Type] : Type[Prop]
+}
+
+type NeverUnlocked = CreateImmutableAccount<UnlockedAccount>; // all properties are immutable now in this type
+
+let neverUnlock: NeverUnlocked = { //immutable object
+    id: 7,
+    name: 'faruq'
+}
+
+// neverUnlock.name = 'faruq'// not possible because all properties are immutable
+
+
