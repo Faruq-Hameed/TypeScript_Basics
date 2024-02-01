@@ -177,6 +177,7 @@ type LazyPerson = Getters<PersonB> //
 // }
 
 
+
 //You can filter out keys by producing never via a conditional type:
 // Remove the 'kind' property
 
