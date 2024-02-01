@@ -110,4 +110,21 @@ let faruq: Person = {
 
 type MandatoryPerson = Concrete<Person> //all properties now mandatory
 
+// let faruq2: MandatoryPerson = { //error object
+//     age: 1,
+//     level: 'PG'
+// }
 
+let faruq2: MandatoryPerson = { //accepted
+    age: 1,
+    level: 'PG',
+    id: 8
+}
+
+type OptionalType<T> = {
+    [P in keyof T]? : T[P] //all properties of T will be optional
+}
+
+type OptionalPerson = OptionalType<Person>; //all properties are optional
+
+let bola : OptionalPerson = {age: 7} //all properties are optional
