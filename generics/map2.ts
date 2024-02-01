@@ -133,7 +133,45 @@ let bola : OptionalPerson = {age: 7} //all properties are optional
 // Key Remapping via as
 
 // In TypeScript 4.1 and onwards, you can re-map keys in mapped types with an as clause in a mapped type:
+//like this;
+// type MappedTypeWithNewProperties<Type> = {
+//     [Properties in keyof Type as NewKeyType]: Type[Properties]
+// }
 
+//examples:
 type MappedTypeWithNewProperties<Type> = {
-    [Prop in keyof Type as NewKeyType]: Type[Prop]
+    [Prop in keyof Type as string]: Type[Prop]
 }
+
+type NewPerson = {
+    name: string,
+    graduate: boolean,
+    age: number,
+}
+type CheckSomething = MappedTypeWithNewProperties<NewPerson>
+
+let newPerson: CheckSomething = {
+    age: 'seven',
+    graduate: 'true',
+    name:8
+}
+
+// You can leverage features like template literal types to create new property names from prior ones:
+
+type Getters<Type> = {
+    [Property in keyof Type as `get${Capitalize<string & Property>}`]: () => Type[Property]
+};
+
+interface PersonB {
+    name: string;
+    age: number;
+    location: string;
+}
+
+type LazyPerson = Getters<PersonB> //
+// LazyPerson now objects with methods returning the properties in PersonB
+// type LazyPerson = {
+//     getName: () => string;
+//     getAge: () => number;
+//     getLocation: () => string;
+// }
