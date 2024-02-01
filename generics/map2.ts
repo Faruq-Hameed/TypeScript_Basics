@@ -181,6 +181,13 @@ type LazyPerson = Getters<PersonB> //
 //You can filter out keys by producing never via a conditional type:
 // Remove the 'kind' property
 
-type RemoveKindKey<T> = {
+type RemoveKindField<T> = {
     [P in keyof T as Exclude<P, 'kind'>]: T[P]
 }
+
+interface Circle {
+    kind: "circle";
+    radius: number;
+}
+
+type KindlessCircle = RemoveKindField<Circle>;
