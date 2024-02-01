@@ -29,10 +29,11 @@ type MappedTypeC <Properties extends string | number | symbol> = {
     [P in Properties] : P;
 }
 
-type MyNewType = MappedTypeC<'propAD' | 'propB'>
+type MyNewType = MappedTypeC<'propA' | 'propB'>
 
 let obj : MyNewType = {
-    propAD: "propB"
+    propA :"propA",
+    propB: "propB"
 }
 
 type MappedT<T> = {
