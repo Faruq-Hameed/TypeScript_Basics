@@ -190,4 +190,4 @@ interface Circle {
     radius: number;
 }
 
-type KindlessCircle = RemoveKindField<Circle>;
+type KindlessCircle = RemoveKindField<Circle>; //kind property has been removed
