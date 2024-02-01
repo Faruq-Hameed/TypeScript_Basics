@@ -219,3 +219,4 @@ type ExtractPII<Type> = {
    
   type ObjectsNeedingGDPRDeletion = ExtractPII<DBFields>;
 
+  type ASCIICacheKey<Str extends string> = `id-${Lowercase<Str>}`
