@@ -191,3 +191,31 @@ interface Circle {
 }
 
 type KindlessCircle = RemoveKindField<Circle>; //kind property has been removed
+
+
+// You can map over arbitrary unions, not just unions of string | number | symbol, but unions of any type:
+type EventConfig<Events extends { kind: string }> = {
+    [E in Events as E["kind"]]: (event: E) => void;
+}
+
+type SquareEvent = { kind: "square", x: number, y: number };
+type CircleEvent = { kind: "circle", radius: number };
+
+type Config = EventConfig<SquareEvent | CircleEvent>
+
+
+// //Mapped types work well with other features in this type manipulation section, 
+// for example here is a mapped type using a conditional type which returns either 
+// a true or false depending on whether an object has the property pii set to the literal true:
+
+type ExtractPII<Type> = {
+    [Property in keyof Type]: Type[Property] extends { pii: true } ? true : false;
+  };
+   
+  type DBFields = {
+    id: { format: "incrementing" };
+    name: { type: string; pii: true };
+  };
+   
+  type ObjectsNeedingGDPRDeletion = ExtractPII<DBFields>;
+
