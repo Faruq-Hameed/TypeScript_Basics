@@ -30,17 +30,27 @@ type MappedTypeC <Properties extends string | number | symbol> = {
 }
 
 type MyNewType = MappedTypeC<'propA' | 'propB'>
-jhjfh
+
 let obj : MyNewType = {
     propA :"propA",
     propB: "propB"
 }
 
 type MappedT<T> = {
-    [P in keyof T] : T[P]
+    [P in keyof T] : T[P] | null
+}
+type MyNewTypeD = MappedT<{a: 'a', b: 'b'}>
+
+//we can be selecting(picking) properties form list of properties in a type list
+type Pick1<T, Properties extends keyof T> ={
+    [P in Properties] : T[P]
 }
 
-type MappedNew = MappedT<Properties>
+
+type MyNewType2 = Pick1<{a: 'apple', b: 'b'}, 'a'> // Pick only a
+//we picked only property a for the type above
+
+let fruit: MyNewType2 = 'apple';
 
 
 
