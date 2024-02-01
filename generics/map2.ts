@@ -91,4 +91,23 @@ let neverUnlock: NeverUnlocked = { //immutable object
 
 // neverUnlock.name = 'faruq'// not possible because all properties are immutable
 
+// Removes 'optional' attributes from a type's properties
+
+type Concrete<T> = {
+    [P in keyof T]-? : T[P] // all optional properties are made mandatory
+}
+
+type Person = {
+    age: number,
+    level: string,
+    id?: string | number // optional property
+}
+
+let faruq: Person = {
+    age: 1,
+    level: 'PG'
+}
+
+type MandatoryPerson = Concrete<Person> //all properties now mandatory
+
 
