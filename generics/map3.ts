@@ -77,3 +77,10 @@ type LowercaseGreeting = "hello, world";
 /**type Greeting2 = "Hello, world"
  */
 type Greeting2 = Capitalize<LowercaseGreeting>;
+
+//Uncapitalize<StringType>: Converts the first character in the string to a lowercase equivalent.
+
+type UppercaseGreeting = "HELLO WORLD";
+/**type UncomfortableGreeting = "hELLO WORLD"
+ */
+type UncomfortableGreeting = Uncapitalize<UppercaseGreeting>;
