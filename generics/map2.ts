@@ -6,30 +6,30 @@
 // (frequently created via a keyof) to iterate through keys to create a type:
 
 type OptionsFlags<Type> = {
-  [Property in keyof Type]: boolean;
+    [Property in keyof Type]: boolean;
 };
 
 // / In this example, OptionsFlags will take all the properties 
 // from the type Type and change their values to be a boolean.
 
 interface OptionsFunc {
-    darkMode: ( )=> void;
-    newUser: ( )=> void;
+    darkMode: () => void;
+    newUser: () => void;
 }
-function dark (){
+function dark() {
 
 }
-function user (){
-    
+function user() {
+
 }
 
-let options: OptionsFunc = {darkMode: dark, newUser: user}; //before the change
+let options: OptionsFunc = { darkMode: dark, newUser: user }; //before the change
 
 type FeatureOptions = OptionsFlags<OptionsFunc>; //using the same type but with updated properties types
 
 // let option2: FeatureOptions = {darkMode: dark, newUser: user}; //error code
 
-let option2: FeatureOptions = {darkMode: true, newUser: false}; //updated properties types
+let option2: FeatureOptions = { darkMode: true, newUser: false }; //updated properties types
 
 
 // Mapping Modifiers
@@ -39,8 +39,8 @@ let option2: FeatureOptions = {darkMode: true, newUser: false}; //updated proper
 // You can remove or add these modifiers by prefixing with - or +. If you don’t add a prefix, then + is assumed.
 
 // Removes 'readonly' attributes from a type's properties
-type CreateMutable<Type> ={
-    -readonly [Property in keyof Type ]: Type[Property] //remove readonly properties from a type
+type CreateMutable<Type> = {
+    -readonly [Property in keyof Type]: Type[Property] //remove readonly properties from a type
 }
 
 type LockedAccount = {
@@ -70,7 +70,7 @@ type LockedAccount2 = {
 
 type UnlockedAccount2 = CreateMutable<LockedAccount> //all the immutable properties(if any) now mutable 
 
-let unlock2 : UnlockedAccount2 = {
+let unlock2: UnlockedAccount2 = {
     id: 9,
     name: "unlocked"
 }
@@ -79,7 +79,7 @@ unlock2.id = 91
 
 //creating immutable types
 type CreateImmutableAccount<Type> = {
-    +readonly [Prop in keyof Type] : Type[Prop]
+    +readonly [Prop in keyof Type]: Type[Prop]
 }
 
 type NeverUnlocked = CreateImmutableAccount<UnlockedAccount>; // all properties are immutable now in this type
@@ -94,7 +94,7 @@ let neverUnlock: NeverUnlocked = { //immutable object
 // Removes 'optional' attributes from a type's properties
 
 type Concrete<T> = {
-    [P in keyof T]-? : T[P] // all optional properties are made mandatory
+    [P in keyof T]-?: T[P] // all optional properties are made mandatory
 }
 
 type Person = {
@@ -122,12 +122,12 @@ let faruq2: MandatoryPerson = { //accepted
 }
 
 type OptionalType<T> = {
-    [P in keyof T]? : T[P] //all properties of T will be optional
+    [P in keyof T]?: T[P] //all properties of T will be optional
 }
 
 type OptionalPerson = OptionalType<Person>; //all properties are optional
 
-let bola : OptionalPerson = {age: 7} //all properties are optional
+let bola: OptionalPerson = { age: 7 } //all properties are optional
 
 
 // Key Remapping via as
@@ -153,7 +153,7 @@ type CheckSomething = MappedTypeWithNewProperties<NewPerson>
 let newPerson: CheckSomething = {
     age: 'seven',
     graduate: 'true',
-    name:8
+    name: 8
 }
 
 // You can leverage features like template literal types to create new property names from prior ones:
@@ -210,12 +210,12 @@ type Config = EventConfig<SquareEvent | CircleEvent>
 
 type ExtractPII<Type> = {
     [Property in keyof Type]: Type[Property] extends { pii: true } ? true : false;
-  };
-   
-  type DBFields = {
+};
+
+type DBFields = {
     id: { format: "incrementing" };
     name: { type: string; pii: true };
-  };
-   
-  type ObjectsNeedingGDPRDeletion = ExtractPII<DBFields>;
+};
+
+type ObjectsNeedingGDPRDeletion = ExtractPII<DBFields>;
 
