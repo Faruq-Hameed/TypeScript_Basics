@@ -22,3 +22,38 @@ type AllLocalIDs = `${EmailLocalIDs | FooterLocaleIDs}_id`; //_id will be concat
 let localIDs : AllLocalIDs = 'heading_id'
 // let localIDs2 : AllLocalIDs = 'heading' //error code
 
+// For each interpolated position in the template literal, the unions are cross multiplied:
+type AllLocaleIDs = `${EmailLocalIDs | FooterLocaleIDs}_id`;
+type Lang = "en" | "ja" | "pt";
+
+/**type LocaleMessageIDs = "en_welcome_id" | "en_heading_id" | "en_footer_id" | "en_sendoff_id" 
+ * | "ja_welcome_id" | "ja_heading_id" | "ja_footer_id" | "ja_sendoff_id" 
+ * | "pt_welcome_id" | "pt_heading_id" | "pt_footer_id" | "pt_sendoff_id" */
+type LocaleMessageIDs = `${Lang}_${AllLocaleIDs}`;   //
+
+/**Topics to be studied later */
+//String Unions in Types
+//Inference with Template Literals
+
+
+//Intrinsic String Manipulation Types
+//This help with string manipulation in TS
+// These types come built-in to the compiler for performance and can’t be found 
+// in the .d.ts files included with TypeScript.
+
+//Uppercase<StringType> This Converts each character in the string to the uppercase version.
+
+type Person = "faruq"
+
+type UpperPerson = Uppercase<Person>
+
+let person : UpperPerson = 'FARUQ'
+// let person : UpperPerson = 'FARUQ'//error code
+
+
+type ASCIICacheKey<Str extends string> = `ID-${Uppercase<Str>}`
+
+/**
+ * type MainID = "ID-MY_APP"
+ */
+type MainID = ASCIICacheKey<"my_app">
