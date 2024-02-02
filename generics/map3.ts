@@ -57,3 +57,23 @@ type ASCIICacheKey<Str extends string> = `ID-${Uppercase<Str>}`
  * type MainID = "ID-MY_APP"
  */
 type MainID = ASCIICacheKey<"my_app">
+
+
+//Lowercase<StringType>: Converts each character in the string to the lowercase equivalent.
+
+type Greeting = "Hello, WORLD!"
+
+/**type QuietGreeting = "hello, world!" */
+type QuietGreeting = Lowercase<Greeting>
+
+type ASCIICacheKey2<Str extends string> = `id-${Lowercase<Str>}`;
+/**type MainID2 = "id-my_app"
+ */
+type MainID2 = ASCIICacheKey2<"MY_APP">
+
+// Capitalize<StringType>:Converts the first character in the string to an uppercase equivalent.
+
+type LowercaseGreeting = "hello, world";
+/**type Greeting2 = "Hello, world"
+ */
+type Greeting2 = Capitalize<LowercaseGreeting>;
