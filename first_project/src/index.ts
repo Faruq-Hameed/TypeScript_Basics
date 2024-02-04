@@ -4,7 +4,8 @@ import taskRoutes from './routes/tasks'
 import logger from 'morgan'
 
 const app :Application = express();
-const port = process.env.PORT || 3000;
+
+const port: number = parseInt(process.env.PORT || '3000', 10); //convert the string value of process.env.PORT to a number
 
 app.use(express.json());
 app.use(logger('dev'))
