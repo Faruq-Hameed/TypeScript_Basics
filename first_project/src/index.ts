@@ -1,9 +1,9 @@
-import express, {Request, Response, NextFunction } from 'express';
+import express, {Application, Request, Response, NextFunction } from 'express';
 import {StatusCodes} from 'http-status-codes'
 import taskRoutes from './routes/tasks'
 import logger from 'morgan'
 
-const app = express();
+const app :Application = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
